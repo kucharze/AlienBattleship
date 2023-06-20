@@ -68,9 +68,9 @@ const attackPlayer = (player, attacker) => {
   console.log(player.hull);
   //determine accuracy and firepower and see if hit landed
   let accuracy = Math.random();
-  console.log(accuracy);
+  //   console.log(accuracy);
   if (accuracy <= attacker.accuracy) {
-    player.hull -= 1;
+    player.hull -= attacker.firepower;
   } else {
     console.log("The shot missed");
   }
@@ -87,9 +87,11 @@ const attackPlayer = (player, attacker) => {
 //If lower than ship accuracy, record hit to you
 //If hit, record damage than determine if you are dead
 const shootAlien = () => {
+  console.log("Reading a shot");
   attackPlayer(aliens[round], playerShip);
 
   if (aliens[round].hull > 0) {
+    console.log("The alien readies a shot");
     attackPlayer(playerShip, aliens[round]);
   } else {
     console.log("The alien is defeated!!!");
