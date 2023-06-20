@@ -31,7 +31,7 @@ let aliens = [
   {
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.random() * (0.8 - 0.6) + 0.6,
   },
   {
     hull: Math.floor(Math.random() * (6 - 3) + 3),
@@ -64,10 +64,16 @@ let aliens = [
 let round = 0;
 
 //Function attack player
-const attackPlayer = (player) => {
+const attackPlayer = (player, attacker) => {
   console.log(player.hull);
   //determine accuracy and firepower and see if hit landed
-  player.hull -= 5;
+  let accuracy = Math.random();
+  console.log(accuracy);
+  if (accuracy <= attacker.accuracy) {
+    player.hull -= 1;
+  } else {
+    console.log("The shot missed");
+  }
   console.log(player.hull);
 };
 
@@ -81,10 +87,10 @@ const attackPlayer = (player) => {
 //If lower than ship accuracy, record hit to you
 //If hit, record damage than determine if you are dead
 const shootAlien = () => {
-  attackPlayer(aliens[round]);
+  attackPlayer(aliens[round], playerShip);
 
-  if (aliens[round].hull >= 0) {
-    attackPlayer(playerShip);
+  if (aliens[round].hull > 0) {
+    attackPlayer(playerShip, aliens[round]);
   } else {
     console.log("The alien is defeated!!!");
     //Determine if there are still aliens left
@@ -92,6 +98,7 @@ const shootAlien = () => {
       //If so give option to retreat or stay
     } else {
       //If not say you win
+      //Increase round by 1
     }
   }
 };
