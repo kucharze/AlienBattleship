@@ -104,8 +104,11 @@ const shootAlien = () => {
   } else {
     console.log(aliens[round].name, "is defeated!!!");
     //Determine if there are still aliens left
-    if (round === 5) {
+    let 
+    round++;
+    if (round === 6) {
       //If so give option to retreat or stay
+      console.log("You win, the aliens have been defeated");
     } else {
       //If not say you win
       //Increase round by 1
@@ -138,7 +141,7 @@ const startUp = () => {
 
 //Function to continue
 const moveOn = () => {
-  round++;
+  //round++;
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
 };
