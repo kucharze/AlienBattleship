@@ -75,6 +75,11 @@ const attackPlayer = (player) => {
 //Get random number
 //If lower than ship accuracy, record hit
 //If hit, record damage than determine if alien is dead
+
+//function to determine if alien attack works
+//Get random number
+//If lower than ship accuracy, record hit to you
+//If hit, record damage than determine if you are dead
 const shootAlien = () => {
   attackPlayer(aliens[round]);
 
@@ -82,14 +87,14 @@ const shootAlien = () => {
     attackPlayer(playerShip);
   } else {
     console.log("The alien is defeated!!!");
+    //Determine if there are still aliens left
+    if (round == 5) {
+      //If so give option to retreat or stay
+    } else {
+      //If not say you win
+    }
   }
 };
-
-//function to determine if alien attack works
-//Get random number
-//If lower than ship accuracy, record hit to you
-//If hit, record damage than determine if you are dead
-const shootPlayer = () => {};
 
 //win state(all ships destroyed)
 
