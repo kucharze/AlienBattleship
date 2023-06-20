@@ -126,6 +126,8 @@ const continueOn = () => {
 //Display player or alien
 const display = () => {
   console.log(aliens[round].name, "is approaching");
+  let alien = document.querySelector(".alienname");
+  alien.innerHTML = aliens[round].name;
 };
 
 //Game start up
