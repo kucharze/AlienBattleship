@@ -26,36 +26,37 @@ let playerShip = {
 };
 
 //List of alien ships
+//Each of these values should be random
 let aliens = [
   {
-    hull: 3,
-    firepower: 2,
-    accuracy: 0.6,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
-    hull: 3,
-    firepower: 3,
-    accuracy: 0.6,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
-    hull: 4,
-    firepower: 3,
-    accuracy: 0.7,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
-    hull: 5,
-    firepower: 3,
-    accuracy: 0.7,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
-    hull: 5,
-    firepower: 4,
-    accuracy: 0.7,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
-    hull: 5,
-    firepower: 4,
-    accuracy: 0.8,
+    hull: Math.floor(Math.random() * (6 - 3) + 3),
+    firepower: Math.floor(Math.random() * (4 - 2) + 2),
+    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
 ];
 
