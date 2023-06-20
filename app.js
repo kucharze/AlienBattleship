@@ -102,7 +102,7 @@ const shootAlien = () => {
     console.log(aliens[round].name, "readies a shot");
     attackPlayer(playerShip, aliens[round]);
   } else {
-    console.log("The alien is defeated!!!");
+    console.log(aliens[round].name, "is defeated!!!");
     //Determine if there are still aliens left
     if (round === 5) {
       //If so give option to retreat or stay
@@ -128,7 +128,12 @@ const display = () => {
 
 //Game start up
 const startUp = () => {
-  console.log("The aliens are attacking");
+  console.log(
+    "The aliens are attacking",
+    playerShip.name,
+    "has been called to defend"
+  );
+  display();
 };
 
 //Function to continue
