@@ -22,7 +22,7 @@ let playerShip = {
   name: "the USS Assembly",
   hull: 20,
   firepower: 5,
-  accuracy: 0.7,
+  accuracy: 7,
 };
 
 //List of alien ships
@@ -32,37 +32,37 @@ let aliens = [
     name: "Alien1",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.random() * (0.8 - 0.6) + 0.6,
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
   {
     name: "Alien2",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
   {
     name: "Alien3",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
   {
     name: "Alien4",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
   {
     name: "Alien5",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
   {
     name: "Alien6",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
+    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
   },
 ];
 
@@ -73,8 +73,9 @@ let round = 0;
 const attackPlayer = (player, attacker) => {
   console.log(player.hull);
   //determine accuracy and firepower and see if hit landed
-  let accuracy = Math.random();
-  //   console.log(accuracy);
+  let accuracy = Math.floor(Math.random() * (10 - 1) + 1);
+  console.log("value", accuracy);
+  console.log("attacker accuracy", attacker.accuracy);
   if (accuracy <= attacker.accuracy) {
     player.hull -= attacker.firepower;
   } else {
@@ -113,6 +114,14 @@ const shootAlien = () => {
 
 //Function for determining continue or retreat
 const continueOn = () => {};
+
+//Display player or alien
+const display = () => {};
+
+//Game start up
+const startUp = () => {
+  console.log("");
+};
 
 //win state(all ships destroyed)
 
