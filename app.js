@@ -18,8 +18,46 @@
 //Is this value less than the ship accuracy
 
 //The player ship
+let playerShip = {
+  name: "the USS Assembly",
+  hull: 20,
+  firepower: 5,
+  accuracy: 0.7,
+};
 
 //List of alien ships
+let aliens = [
+  {
+    hull: 3,
+    firepower: 2,
+    accuracy: 0.6,
+  },
+  {
+    hull: 3,
+    firepower: 3,
+    accuracy: 0.6,
+  },
+  {
+    hull: 4,
+    firepower: 3,
+    accuracy: 0.7,
+  },
+  {
+    hull: 5,
+    firepower: 3,
+    accuracy: 0.7,
+  },
+  {
+    hull: 5,
+    firepower: 4,
+    accuracy: 0.7,
+  },
+  {
+    hull: 5,
+    firepower: 4,
+    accuracy: 0.8,
+  },
+];
 
 //function to determine if your attack works
 //Get random number
