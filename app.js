@@ -66,6 +66,7 @@ let round = 0;
 //Function attack player
 const attackPlayer = (player) => {
   console.log(player.hull);
+  //determine accuracy and firepower and see if hit landed
   player.hull -= 5;
   console.log(player.hull);
 };
@@ -75,7 +76,13 @@ const attackPlayer = (player) => {
 //If lower than ship accuracy, record hit
 //If hit, record damage than determine if alien is dead
 const shootAlien = () => {
-  attackPlayer(aliens[0]);
+  attackPlayer(aliens[round]);
+
+  if (aliens[round].hull >= 0) {
+    attackPlayer(playerShip);
+  } else {
+    console.log("The alien is defeated!!!");
+  }
 };
 
 //function to determine if alien attack works
