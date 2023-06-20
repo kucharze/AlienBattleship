@@ -59,6 +59,9 @@ let aliens = [
   },
 ];
 
+//Round number
+let round = 0;
+
 //function to determine if your attack works
 //Get random number
 //If lower than ship accuracy, record hit
