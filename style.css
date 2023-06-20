@@ -1,3 +1,26 @@
 .continueOn {
   display: none;
 }
+.playArea {
+  display: flex;
+  height: 400px;
+  border: solid green;
+}
+.playerSpace {
+  width: 30%;
+  border: solid blue;
+}
+.player {
+  height: 250px;
+}
+.consol {
+  width: 40%;
+  font-size: 20px;
+}
+.alienSpace {
+  width: 30%;
+  border: solid blue;
+}
+.alien {
+  height: 250px;
+}
