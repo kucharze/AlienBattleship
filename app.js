@@ -63,15 +63,26 @@ let aliens = [
 //Round number
 let round = 0;
 
+//Function attack player
+const attackPlayer = (player) => {
+  console.log(player.hull);
+  player.hull -= 5;
+  console.log(player.hull);
+};
+
 //function to determine if your attack works
 //Get random number
 //If lower than ship accuracy, record hit
 //If hit, record damage than determine if alien is dead
+const shootAlien = () => {
+  attackPlayer(aliens[0]);
+};
 
 //function to determine if alien attack works
 //Get random number
 //If lower than ship accuracy, record hit to you
 //If hit, record damage than determine if you are dead
+const shootPlayer = () => {};
 
 //win state(all ships destroyed)
 
