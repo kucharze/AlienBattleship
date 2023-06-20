@@ -29,31 +29,37 @@ let playerShip = {
 //Each of these values should be random
 let aliens = [
   {
+    name: "Alien1",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.random() * (0.8 - 0.6) + 0.6,
   },
   {
+    name: "Alien2",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
+    name: "Alien3",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
+    name: "Alien4",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
+    name: "Alien5",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
   },
   {
+    name: "Alien6",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (0.8 - 0.6) + 0.6),
@@ -104,6 +110,9 @@ const shootAlien = () => {
     }
   }
 };
+
+//Function for determining continue or retreat
+const continueOn = () => {};
 
 //win state(all ships destroyed)
 
