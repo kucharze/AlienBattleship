@@ -12,19 +12,22 @@
   <body>
     <!--main area-->
     <div class="main">
-      <!-- ---player div-->
-      <div class="player">
-        <!--Players ship stats-->
-      </div>
-      <!--Console for what happend-->
-      <div class="consol">
-        <!--Last thing that happend-->
-        <!--Will be updated to record all things that happen-->
-        <!--Stats if escaped-->
-      </div>
-      <!-- ---Alien div-->
-      <div class="alien">
-        <!--Alien pic and ship stats-->
+      <h2>Welcome to Alien defence</h2>
+      <div class="playArea">
+        <!-- ---player div-->
+        <div class="player">
+          <!--Players ship stats-->
+        </div>
+        <!--Console for what happend-->
+        <div class="consol">
+          <!--Last thing that happend-->
+          <!--Will be updated to record all things that happen-->
+          <!--Stats if escaped-->
+        </div>
+        <!-- ---Alien div-->
+        <div class="alien">
+          <!--Alien pic and ship stats-->
+        </div>
       </div>
     </div>
 
@@ -33,10 +36,13 @@
       <!-- --- attack-->
       <button class="attack" onclick="shootAlien()">Attack Alien</button>
       <!-- Make below a separate div and hide at first?? -->
-      <!-- --- Retreat-->
-      <button class="retreat">Retreat</button>
-      <!-- --- Continue-->
-      <button class="continue">Fight the next ship</button>
+      <div class="continueOn">
+        <h3>Should we continue?</h3>
+        <!-- --- Retreat-->
+        <button class="retreat">Retreat</button>
+        <!-- --- Continue-->
+        <button class="continue">Fight the next ship</button>
+      </div>
     </div>
 
     <script src="app.js" async defer></script>
