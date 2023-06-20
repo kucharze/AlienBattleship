@@ -13,12 +13,32 @@
 // Your strength is that you have the initiative and get to attack first. However, you do not have targeting lasers and can only attack the aliens in order.
 // After you have destroyed a ship, you have the option to make a hasty retreat.
 
+//Logic for determining accuracy
+//console.log(Math.floor(Math.random() * (10 - 1) + 1));
+//Is this value less than the ship accuracy
+
 //The player ship
 
 //List of alien ships
 
-//main game loop
-
 //function to determine if your attack works
+//Get random number
+//If lower than ship accuracy, record hit
+//If hit, record damage than determine if alien is dead
 
 //function to determine if alien attack works
+//Get random number
+//If lower than ship accuracy, record hit to you
+//If hit, record damage than determine if you are dead
+
+//win state(all ships destroyed)
+
+//lose state(you are destroyed)
+
+//Escape state(The game is over and you fled)
+//Show player has escaped along with how many ships are destroyed
+//In future, allow player to repair but limit times of escape?
+
+//main game loop
+//You attack alien, than determine if it is alive
+//If alive, alien attacks you and then determin if you survive
