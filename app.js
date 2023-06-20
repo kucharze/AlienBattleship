@@ -104,7 +104,6 @@ const shootAlien = () => {
   } else {
     console.log(aliens[round].name, "is defeated!!!");
     //Determine if there are still aliens left
-    let 
     round++;
     if (round === 6) {
       //If so give option to retreat or stay
