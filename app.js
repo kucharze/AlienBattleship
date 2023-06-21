@@ -105,6 +105,16 @@ const attackPlayer = (player, attacker) => {
   displayAlien();
 };
 
+//Logic to end the game
+const endGame = () => {
+  let options = document.querySelector(".continueOn");
+  options.style = "display:block";
+  document.querySelector(".attack").disabled = true;
+};
+
+//restart the game
+const restart = () => {};
+
 //Process logic for shooting at an alien, and an alein shooting back
 const shootAlien = () => {
   console.log("Reading a shot");
@@ -116,7 +126,7 @@ const shootAlien = () => {
     attackPlayer(playerShip, aliens[round]);
     if (playerShip.hull <= 0) {
       updateConsole("Ship Destroyed!! You loose");
-      document.querySelector(".attack").disabled = true;
+      endGame();
     }
   } else {
     console.log(aliens[round].name, "is defeated!!!");
@@ -200,8 +210,7 @@ const moveOn = () => {
 //In future, allow player to repair but limit times of escape?
 //Function to escape and end the game that way
 const escape = () => {
-  let options = document.querySelector(".continueOn");
-  options.style = "display:none";
+  endGame();
   console.log("You have escaped, you killed", round, "alien ships");
   updateConsole("You have escape, you killed " + round + " alien ships");
 };
@@ -210,10 +219,10 @@ const escape = () => {
 const updateConsole = (message) => {
   //Add a new message to the console
   let log = document.querySelector(".gamelog");
-  console.log(log);
+
   let mess = document.createElement("p");
   mess.innerHTML = message;
-  console.log(mess);
+
   log.append(mess);
 };
 
