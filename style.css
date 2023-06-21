@@ -2,29 +2,33 @@
   display: none;
 }
 .playArea {
+  background-image: url(space.jpg);
   display: flex;
-  height: 700px;
+  background-size: cover;
+  height: 800px;
   border: solid green;
 }
+
 .playerSpace {
   width: 30%;
   border: solid blue;
   font-size: 30px;
 }
+.stats {
+  margin-left: 10px;
+  background-color: white;
+  opacity: 0.65;
+  text-align: center;
+}
 .player {
-  height: 300px;
+  height: 350px;
+  width: 100%;
 }
-.name {
+.alienstats {
   margin-left: 10px;
-}
-.health {
-  margin-left: 10px;
-}
-.firepower {
-  margin-left: 10px;
-}
-.accuracy {
-  margin-left: 10px;
+  background-color: white;
+  opacity: 0.65;
+  text-align: center;
 }
 .attack {
   height: 40px;
@@ -33,7 +37,9 @@
 }
 .consol {
   width: 40%;
-  font-size: 20px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
 }
 .alienSpace {
   width: 30%;
