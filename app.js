@@ -197,8 +197,16 @@ const escape = () => {
 //Update the center display to update
 const updateConsole = (message) => {
   //Add a new message to the console
-  document.querySelector(".Report").innerHTML = message;
+  let log = document.querySelector(".gamelog");
+  console.log(log);
+  let mess = document.createElement("p");
+  mess.innerHTML = message;
+  console.log(mess);
+  log.append(mess);
 };
+
+//clear the console
+const clearConsole = () => {};
 
 //Set explosion method
 const setExplosion = () => {
