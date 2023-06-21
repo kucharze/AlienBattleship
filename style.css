@@ -9,10 +9,10 @@
   padding-top: 20px;
 }
 .playArea {
-  background-image: url(sky2.jpg);
+  background-image: url(AlienBackground03.gif);
   display: flex;
   background-size: cover;
-  height: 1100px;
+  height: 900px;
   border: solid green;
 }
 
