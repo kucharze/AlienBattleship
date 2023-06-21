@@ -163,6 +163,11 @@ const moveOn = () => {
 const escape = () => {
   console.log("You have escaped, you killed", round, "alien ships");
 };
+
+//Set explosion method
+const setExplosion = () => {
+  //Set an explosion picture for either the player or the alien
+};
 //win state(all ships destroyed)
 
 //lose state(you are destroyed)
