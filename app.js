@@ -73,7 +73,7 @@ let aliens = [
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
     image:
-      "https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/04/alien-covenant-xenomorph.jpg",
+      "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
   },
 ];
 
@@ -123,6 +123,7 @@ const shootAlien = () => {
     attackPlayer(playerShip, aliens[round]);
   } else {
     console.log(aliens[round].name, "is defeated!!!");
+    updateConsole(aliens[round].name + " is defeated!!");
     //Determine if there are still aliens left
     round++;
     if (round === 6) {
