@@ -105,20 +105,13 @@ const attackPlayer = (player, attacker) => {
   displayAlien();
 };
 
-//function to determine if your attack works
-//Get random number
-//If lower than ship accuracy, record hit
-//If hit, record damage than determine if alien is dead
-
-//function to determine if alien attack works
-//Get random number
-//If lower than ship accuracy, record hit to you
-//If hit, record damage than determine if you are dead
+//Process logic for shooting at an alien, and an alein shooting back
 const shootAlien = () => {
   console.log("Reading a shot");
   attackPlayer(aliens[round], playerShip);
 
   if (aliens[round].hull > 0) {
+    //Alien is still alive
     console.log(aliens[round].name, "readies a shot");
     attackPlayer(playerShip, aliens[round]);
   } else {
@@ -192,9 +185,11 @@ const startUp = () => {
 const moveOn = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
-  displayNewAlien();
+
   //Clear the console
   clearConsole();
+
+  displayNewAlien();
 };
 
 //Function to escape
