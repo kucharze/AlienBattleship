@@ -26,7 +26,7 @@
             <div class="stats">
               <p class="name">The USS Assembly</p>
               <p class="health">health</p>
-              <p class="firepower">Firepower: 5</p>
+              <p class="firepower">Firepower: 3</p>
               <p class="accuracy">Accuracy: 7</p>
               <p class="misslepower">Misssile firepower: 5</p>
               <p class="missilesleft">Missles Left: 3</p>
@@ -34,7 +34,7 @@
 
             <!-- --- attack-->
             <button class="attack" onclick="shootAlien()">Attack Alien</button>
-            <button class="attack">Fire Missle</button>
+            <button class="missle" onclick="fireMissles()">Fire Missle</button>
           </div>
         </div>
         <!--Console for what happend-->
@@ -49,7 +49,7 @@
 
             <!-- Make below a separate div and hide at first?? -->
             <div class="continueOn">
-              <h3>Should we continue?</h3>
+              <h2>Should we continue?</h2>
               <!-- --- Retreat-->
               <button class="retreat" onclick="escape()">Retreat</button>
               <!-- --- Continue-->
