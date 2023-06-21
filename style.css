@@ -15,7 +15,7 @@
   font-size: 30px;
 }
 .stats {
-  margin-left: 10px;
+  margin: 10px;
   background-color: white;
   opacity: 0.65;
   text-align: center;
@@ -25,7 +25,7 @@
   width: 100%;
 }
 .alienstats {
-  margin-left: 10px;
+  margin: 10px;
   background-color: white;
   opacity: 0.65;
   text-align: center;
