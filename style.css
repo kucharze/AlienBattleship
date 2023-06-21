@@ -3,15 +3,21 @@
 }
 .playArea {
   display: flex;
-  height: 400px;
+  height: 550px;
   border: solid green;
 }
 .playerSpace {
   width: 30%;
   border: solid blue;
+  font-size: 30px;
 }
 .player {
-  height: 250px;
+  height: 300px;
+}
+.attack {
+  height: 40px;
+  font-size: 25px;
+  margin-left: 10px;
 }
 .consol {
   width: 40%;
@@ -20,7 +26,8 @@
 .alienSpace {
   width: 30%;
   border: solid blue;
+  font-size: 30px;
 }
 .alien {
-  height: 250px;
+  height: 350px;
 }
