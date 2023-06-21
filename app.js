@@ -124,10 +124,20 @@ const continueOn = () => {
 };
 
 //Display player or alien
-const display = () => {
+const displayNewAlien = () => {
   console.log(aliens[round].name, "is approaching");
   let alien = document.querySelector(".alienname");
   alien.innerHTML = aliens[round].name;
+  displayAlien();
+};
+
+const displayAlien = () => {
+  document.querySelector(".healthAlien").innerHTML =
+    "Health: " + aliens[round].hull;
+};
+
+const displayHuman = () => {
+  document.querySelector(".health").innerHTML = "Health: " + playerShip.hull;
 };
 
 //Game start up
@@ -137,14 +147,16 @@ const startUp = () => {
     playerShip.name,
     "has been called to defend"
   );
-  display();
+  displayNewAlien();
+
+  displayHuman();
 };
 
 //Function to continue
 const moveOn = () => {
-  //round++;
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
+  displayNewAlien();
 };
 
 //Function to escape
