@@ -124,6 +124,9 @@ const fireMissles = () => {
     updateConsole("fire missle");
     aliens[round].hull -= 5;
     if (aliens[round].hull <= 0) {
+      console.log(aliens[round].name, "is defeated!!!");
+      updateConsole(aliens[round].name + " is defeated!!");
+      displayAlien();
       nextRound();
     }
     let mi = document.querySelector(".missilesleft");
