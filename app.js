@@ -81,18 +81,15 @@ let round = 0;
 
 //Function attack player
 const attackPlayer = (player, attacker) => {
-  //   console.log(player.hull);
   //determine accuracy and firepower and see if hit landed
   let accuracy = Math.floor(Math.random() * (10 - 1) + 1);
-  //   console.log("value", accuracy);
-  //   console.log("attacker accuracy", attacker.accuracy);
+
   if (accuracy <= attacker.accuracy) {
     player.hull -= attacker.firepower;
     console.log("The shot hit", player.hull);
   } else {
     console.log("The shot missed");
   }
-  //   console.log(player.hull);
 };
 
 //function to determine if your attack works
@@ -118,6 +115,8 @@ const shootAlien = () => {
     if (round === 6) {
       //If so give option to retreat or stay
       console.log("You win, the aliens have been defeated");
+      document.querySelector(".Report").innerHTML =
+        "The aliens have been defeated";
     } else {
       //If not say you win
       //Increase round by 1
