@@ -167,6 +167,7 @@ const escape = () => {
 //Set explosion method
 const setExplosion = () => {
   //Set an explosion picture for either the player or the alien
+  // https://as1.ftcdn.net/v2/jpg/05/63/16/14/1000_F_563161494_iYVA1GGkVrd6QYPJtEXWSfJ6xr4OuZ77.jpg
 };
 //win state(all ships destroyed)
 
