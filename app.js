@@ -33,6 +33,7 @@ let aliens = [
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image: "thumbnail_image001.png",
   },
   {
     name: "Alien2",
@@ -149,6 +150,9 @@ const continueOn = () => {
 const displayNewAlien = () => {
   console.log(aliens[round].name, "is approaching");
   updateConsole(aliens[round].name + " is approaching");
+  let a = document.querySelector(".alien");
+  a.setAttribute("src", aliens[round].image);
+  // a.classList.toggle("alien");
   let alien = document.querySelector(".alienname");
   alien.innerHTML = aliens[round].name;
   displayAlien();
