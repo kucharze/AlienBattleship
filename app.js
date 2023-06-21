@@ -114,6 +114,10 @@ const shootAlien = () => {
     //Alien is still alive
     console.log(aliens[round].name, "readies a shot");
     attackPlayer(playerShip, aliens[round]);
+    if (playerShip.hull <= 0) {
+      updateConsole("Ship Destroyed!! You loose");
+      document.querySelector(".attack").disabled = true;
+    }
   } else {
     console.log(aliens[round].name, "is defeated!!!");
     updateConsole(aliens[round].name + " is defeated!!");
@@ -123,8 +127,7 @@ const shootAlien = () => {
       //If so give option to retreat or stay
       console.log("You win, the aliens have been defeated");
       updateConsole("You win!! The aliens have been defeated!!");
-      document.querySelector(".Report").innerHTML =
-        "The aliens have been defeated";
+      document.querySelector(".attack").disabled = true;
     } else {
       //If not say you win
       //Increase round by 1
@@ -192,7 +195,10 @@ const moveOn = () => {
   displayNewAlien();
 };
 
-//Function to escape
+//Escape state(The game is over and you fled)
+//Show player has escaped along with how many ships are destroyed
+//In future, allow player to repair but limit times of escape?
+//Function to escape and end the game that way
 const escape = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
@@ -222,13 +228,6 @@ const setExplosion = () => {
   //Set an explosion picture for either the player or the alien
   // https://as1.ftcdn.net/v2/jpg/05/63/16/14/1000_F_563161494_iYVA1GGkVrd6QYPJtEXWSfJ6xr4OuZ77.jpg
 };
-//win state(all ships destroyed)
-
-//lose state(you are destroyed)
-
-//Escape state(The game is over and you fled)
-//Show player has escaped along with how many ships are destroyed
-//In future, allow player to repair but limit times of escape?
 
 //main game loop
 //You attack alien, than determine if it is alive
