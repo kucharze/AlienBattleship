@@ -170,6 +170,8 @@ const displayHuman = () => {
 
 //Game start up
 const startUp = () => {
+  updateConsole("The aliens are attacking");
+  updateConsole(playerShip.name + " has been called to defend");
   console.log(
     "The aliens are attacking",
     playerShip.name,
