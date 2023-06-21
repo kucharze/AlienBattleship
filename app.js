@@ -21,7 +21,7 @@
 let playerShip = {
   name: "The USS Assembly",
   hull: 20,
-  firepower: 5,
+  firepower: 3,
   accuracy: 7,
   missles: 3,
 };
@@ -36,15 +36,14 @@ let aliens = [
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image: "thumbnail_image001.png",
+    image: "Alien01.gif",
   },
   {
     name: "Alien2",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image:
-      "https://media.nature.com/lw767/magazine-assets/d41586-023-00258-z/d41586-023-00258-z_23971782.jpg",
+    image: "Alien02.gif",
   },
   {
     name: "Alien3",
@@ -59,8 +58,7 @@ let aliens = [
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image:
-      "https://carnegiemnh.org/wp-content/uploads/2021/12/alienkindpng.png",
+    image: "Aliens02.gif",
   },
   {
     name: "Alien5",
@@ -113,6 +111,7 @@ const endGame = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
   document.querySelector(".attack").disabled = true;
+  document.querySelector(".missle").disabled = true;
 };
 
 //restart the game
@@ -121,6 +120,16 @@ const restart = () => {};
 //fire a missle at the alien
 const fireMissles = () => {
   if (playerShip.missles > 0) {
+    playerShip.missles--;
+    updateConsole("fire missle");
+    aliens[round].hull -= 5;
+    if (aliens[round].hull <= 0) {
+      nextRound();
+    }
+    let mi = document.querySelector(".missilesleft");
+    mi.innerHTML = "Missles Left: " + playerShip.missles;
+  } else {
+    updateConsole("There are no more missles");
   }
 };
 
@@ -142,19 +151,24 @@ const shootAlien = () => {
     clearConsole();
     console.log(aliens[round].name, "is defeated!!!");
     updateConsole(aliens[round].name + " is defeated!!");
-    //Determine if there are still aliens left
-    round++;
-    if (round === 6) {
-      //If so give option to retreat or stay
-      console.log("You win, the aliens have been defeated");
-      updateConsole("You win!! The aliens have been defeated!!");
-      document.querySelector(".attack").disabled = true;
-    } else {
-      //If not say you win
-      //Increase round by 1
-      console.log("Continue on?");
-      continueOn();
-    }
+    nextRound();
+  }
+};
+
+//Determine if we need another round
+const nextRound = () => {
+  //Determine if there are still aliens left
+  round++;
+  if (round === 6) {
+    //If so give option to retreat or stay
+    console.log("You win, the aliens have been defeated");
+    updateConsole("You win!! The aliens have been defeated!!");
+    endGame();
+  } else {
+    //If not say you win
+    //Increase round by 1
+    console.log("Continue on?");
+    continueOn();
   }
 };
 
