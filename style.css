@@ -24,6 +24,7 @@
 .stats {
   margin: 10px;
   background-color: white;
+  color: black;
   opacity: 0.65;
   text-align: center;
 }
@@ -34,6 +35,7 @@
 .alienstats {
   margin: 10px;
   background-color: white;
+  color: black;
   opacity: 0.65;
   text-align: center;
 }

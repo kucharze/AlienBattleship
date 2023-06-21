@@ -19,7 +19,7 @@
 
 //The player ship
 let playerShip = {
-  name: "the USS Assembly",
+  name: "The USS Assembly",
   hull: 20,
   firepower: 5,
   accuracy: 7,
