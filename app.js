@@ -39,30 +39,40 @@ let aliens = [
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image:
+      "https://media.nature.com/lw767/magazine-assets/d41586-023-00258-z/d41586-023-00258-z_23971782.jpg",
   },
   {
     name: "Alien3",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image:
+      "https://media.istockphoto.com/id/1173828830/vector/green-alien-climbs-out-from-the-hole-of-space-with-stars-extraterrestrial-in-flat-cartoon.jpg?s=612x612&w=0&k=20&c=AymzvIizcfH7toqxjQN9F0THwYsuEMvOBBJn06VYoxY=",
   },
   {
     name: "Alien4",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image:
+      "https://carnegiemnh.org/wp-content/uploads/2021/12/alienkindpng.png",
   },
   {
     name: "Alien5",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image:
+      "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
   },
   {
     name: "Alien6",
     hull: Math.floor(Math.random() * (6 - 3) + 3),
     firepower: Math.floor(Math.random() * (4 - 2) + 2),
     accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+    image:
+      "https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/04/alien-covenant-xenomorph.jpg",
   },
 ];
 
