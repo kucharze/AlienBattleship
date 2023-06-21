@@ -87,8 +87,18 @@ const attackPlayer = (player, attacker) => {
   if (accuracy <= attacker.accuracy) {
     player.hull -= attacker.firepower;
     console.log("The shot hit", player.hull);
+    if (attacker === playerShip) {
+      updateConsole("Player shot hit");
+    } else {
+      updateConsole("Alien shot hit");
+    }
   } else {
     console.log("The shot missed");
+    if (attacker === playerShip) {
+      updateConsole("Player shot missed");
+    } else {
+      updateConsole("Alien shot missed");
+    }
   }
   displayHuman();
   displayAlien();
@@ -117,6 +127,7 @@ const shootAlien = () => {
     if (round === 6) {
       //If so give option to retreat or stay
       console.log("You win, the aliens have been defeated");
+      updateConsole("You win!! The aliens have been defeated!!");
       document.querySelector(".Report").innerHTML =
         "The aliens have been defeated";
     } else {
@@ -174,15 +185,18 @@ const moveOn = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
   displayNewAlien();
+  //Clear the console
 };
 
 //Function to escape
 const escape = () => {
   console.log("You have escaped, you killed", round, "alien ships");
+  updateConsole("You have escape, you killed " + round + " alien ships");
 };
 
 //Update the center display to update
 const updateConsole = (message) => {
+  //Add a new message to the console
   document.querySelector(".Report").innerHTML = message;
 };
 
