@@ -3,7 +3,7 @@
 }
 .playArea {
   display: flex;
-  height: 550px;
+  height: 700px;
   border: solid green;
 }
 .playerSpace {
@@ -13,6 +13,18 @@
 }
 .player {
   height: 300px;
+}
+.name {
+  margin-left: 10px;
+}
+.health {
+  margin-left: 10px;
+}
+.firepower {
+  margin-left: 10px;
+}
+.accuracy {
+  margin-left: 10px;
 }
 .attack {
   height: 40px;
