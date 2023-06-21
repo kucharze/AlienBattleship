@@ -145,6 +145,12 @@ const displayNewAlien = () => {
 const displayAlien = () => {
   document.querySelector(".healthAlien").innerHTML =
     "Health: " + aliens[round].hull;
+
+  document.querySelector(".firepowerAlien").innerHTML =
+    "Firepower: " + aliens[round].firepower;
+
+  document.querySelector(".accuracyAlien").innerHTML =
+    "Accuracy: " + aliens[round].accuracy;
 };
 
 const displayHuman = () => {
@@ -173,6 +179,11 @@ const moveOn = () => {
 //Function to escape
 const escape = () => {
   console.log("You have escaped, you killed", round, "alien ships");
+};
+
+//Update the center display to update
+const updateConsole = (message) => {
+  document.querySelector(".Report").innerHTML = message;
 };
 
 //Set explosion method
