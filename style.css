@@ -1,6 +1,13 @@
 .continueOn {
   display: none;
 }
+.main {
+  background-color: black;
+  color: white;
+  height: 1000px;
+  text-align: center;
+  padding-top: 20px;
+}
 .playArea {
   background-image: url(space.jpg);
   display: flex;
@@ -21,7 +28,7 @@
   text-align: center;
 }
 .player {
-  height: 350px;
+  height: 300px;
   width: 100%;
 }
 .alienstats {
