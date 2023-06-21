@@ -90,6 +90,8 @@ const attackPlayer = (player, attacker) => {
   } else {
     console.log("The shot missed");
   }
+  displayHuman();
+  displayAlien();
 };
 
 //function to determine if your attack works
