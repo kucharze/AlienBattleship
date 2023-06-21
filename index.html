@@ -37,6 +37,20 @@
           <!--Will be updated to record all things that happen-->
           <!--Stats if escaped-->
           <p class="Report">Console space</p>
+          <div class="buttons">
+            <!--Button section-->
+
+            <!-- Make below a separate div and hide at first?? -->
+            <div class="continueOn">
+              <h3>Should we continue?</h3>
+              <!-- --- Retreat-->
+              <button class="retreat" onclick="escape()">Retreat</button>
+              <!-- --- Continue-->
+              <button class="continue" onclick="moveOn()">
+                Fight the next ship
+              </button>
+            </div>
+          </div>
         </div>
         <!-- ---Alien div-->
         <div class="alienSpace">
@@ -53,19 +67,6 @@
             <p class="accuracyAlien">Accuracy</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="buttons">
-      <!--Button section-->
-
-      <!-- Make below a separate div and hide at first?? -->
-      <div class="continueOn">
-        <h3>Should we continue?</h3>
-        <!-- --- Retreat-->
-        <button class="retreat" onclick="escape()">Retreat</button>
-        <!-- --- Continue-->
-        <button class="continue" onclick="moveOn()">Fight the next ship</button>
       </div>
     </div>
 
