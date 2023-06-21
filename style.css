@@ -40,8 +40,13 @@
   text-align: center;
 }
 .attack {
-  height: 40px;
-  font-size: 25px;
+  height: 50px;
+  font-size: 30px;
+  margin-left: 10px;
+}
+.missle {
+  height: 50px;
+  font-size: 30px;
   margin-left: 10px;
 }
 .consol {
