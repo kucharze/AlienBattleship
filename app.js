@@ -23,7 +23,10 @@ let playerShip = {
   hull: 20,
   firepower: 5,
   accuracy: 7,
+  missles: 3,
 };
+
+let flags = 0;
 
 //List of alien ships
 //Each of these values should be random
@@ -108,12 +111,18 @@ const attackPlayer = (player, attacker) => {
 //Logic to end the game
 const endGame = () => {
   let options = document.querySelector(".continueOn");
-  options.style = "display:block";
+  options.style = "display:none";
   document.querySelector(".attack").disabled = true;
 };
 
 //restart the game
 const restart = () => {};
+
+//fire a missle at the alien
+const fireMissles = () => {
+  if (playerShip.missles > 0) {
+  }
+};
 
 //Process logic for shooting at an alien, and an alein shooting back
 const shootAlien = () => {
@@ -125,10 +134,12 @@ const shootAlien = () => {
     console.log(aliens[round].name, "readies a shot");
     attackPlayer(playerShip, aliens[round]);
     if (playerShip.hull <= 0) {
+      clearConsole();
       updateConsole("Ship Destroyed!! You loose");
       endGame();
     }
   } else {
+    clearConsole();
     console.log(aliens[round].name, "is defeated!!!");
     updateConsole(aliens[round].name + " is defeated!!");
     //Determine if there are still aliens left
@@ -211,12 +222,16 @@ const moveOn = () => {
 //Function to escape and end the game that way
 const escape = () => {
   endGame();
+  clearConsole();
   console.log("You have escaped, you killed", round, "alien ships");
   updateConsole("You have escape, you killed " + round + " alien ships");
 };
 
 //Update the center display to update
 const updateConsole = (message) => {
+  if (flags > 6) {
+    clearConsole();
+  }
   //Add a new message to the console
   let log = document.querySelector(".gamelog");
 
@@ -224,10 +239,13 @@ const updateConsole = (message) => {
   mess.innerHTML = message;
 
   log.append(mess);
+  flags++;
+  console.log("flags", flags);
 };
 
 //clear the console
 const clearConsole = () => {
+  flags = 0;
   let log = document.querySelector(".gamelog");
   log.replaceChildren();
 };
