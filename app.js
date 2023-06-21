@@ -148,6 +148,7 @@ const continueOn = () => {
 //Display player or alien
 const displayNewAlien = () => {
   console.log(aliens[round].name, "is approaching");
+  updateConsole(aliens[round].name + " is approaching");
   let alien = document.querySelector(".alienname");
   alien.innerHTML = aliens[round].name;
   displayAlien();
@@ -188,10 +189,13 @@ const moveOn = () => {
   options.style = "display:none";
   displayNewAlien();
   //Clear the console
+  clearConsole();
 };
 
 //Function to escape
 const escape = () => {
+  let options = document.querySelector(".continueOn");
+  options.style = "display:none";
   console.log("You have escaped, you killed", round, "alien ships");
   updateConsole("You have escape, you killed " + round + " alien ships");
 };
@@ -208,7 +212,10 @@ const updateConsole = (message) => {
 };
 
 //clear the console
-const clearConsole = () => {};
+const clearConsole = () => {
+  let log = document.querySelector(".gamelog");
+  log.replaceChildren();
+};
 
 //Set explosion method
 const setExplosion = () => {
