@@ -35,7 +35,7 @@ let round = 0;
 const resetShips = () => {
   aliens = [
     {
-      name: "Alien1",
+      name: "Scouter",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
       firepower: Math.floor(Math.random() * (4 - 2) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
@@ -56,7 +56,7 @@ const resetShips = () => {
       image: "AlienPilot100.gif",
     },
     {
-      name: "Alien4",
+      name: "The A team",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
       firepower: Math.floor(Math.random() * (4 - 2) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
