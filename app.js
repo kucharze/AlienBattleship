@@ -72,14 +72,14 @@ const resetShips = () => {
       hull: Math.floor(Math.random() * (6 - 3) + 3),
       firepower: Math.floor(Math.random() * (4 - 2) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image: "Alien01.gif",
+      image: "AS100.gif",
     },
     {
       name: "Alien2",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
       firepower: Math.floor(Math.random() * (4 - 2) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image: "Alien02.gif",
+      image: "ZPurple.gif",
     },
     {
       name: "Alien3",
@@ -258,6 +258,8 @@ const displayHuman = () => {
 
 //Game start up
 const startUp = () => {
+  resetShips();
+
   updateConsole("The aliens are attacking");
   updateConsole(playerShip.name + " has been called to defend");
   console.log(
@@ -265,7 +267,7 @@ const startUp = () => {
     playerShip.name,
     "has been called to defend"
   );
-  resetShips();
+
   displayNewAlien();
 
   displayHuman();
