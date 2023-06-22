@@ -1,6 +1,9 @@
 .continueOn {
   display: none;
 }
+.title {
+  font-size: 60px;
+}
 .main {
   background-color: darkblue;
   color: white;
