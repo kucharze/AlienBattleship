@@ -21,8 +21,12 @@
 
 .playerSpace {
   width: 30%;
-  border: solid black;
+  border: solid darkblue;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
 }
 .stats {
   margin: 10px;
@@ -30,33 +34,33 @@
   color: black;
   opacity: 0.65;
   text-align: center;
+  width: 70%;
 }
 .player {
   height: 300px;
   width: 100%;
 }
-.alienstats {
-  margin: 10px;
-  background-color: white;
-  color: black;
-  opacity: 0.65;
-  text-align: center;
-}
+
 .shoot {
   height: 50px;
   font-size: 30px;
   margin-left: 10px;
+  border-radius: 25px;
 }
 .missle {
   height: 50px;
   font-size: 30px;
   margin-left: 10px;
+  border-radius: 25px;
 }
 .shields {
   height: 50px;
   font-size: 30px;
   margin-left: 10px;
   margin-top: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 25px;
 }
 .consol {
   width: 40%;
@@ -87,10 +91,22 @@
 }
 .alienSpace {
   width: 30%;
-  border: solid black;
+  border: solid darkblue;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
 }
 .alien {
   height: 350px;
   width: 100%;
+}
+.alienstats {
+  margin: 10px;
+  background-color: white;
+  color: black;
+  opacity: 0.65;
+  text-align: center;
+  /* width: 50%; */
 }
