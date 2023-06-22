@@ -29,6 +29,63 @@ let aliens = [];
 //Round number
 let round = 0;
 
+//Reset aliens array
+const resetShips = () => {
+  aliens = [
+    {
+      name: "Alien1",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "AS100.gif",
+    },
+    {
+      name: "Alien2",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "ZPurple.gif",
+    },
+    {
+      name: "Alien3",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "AlienPilot100.gif",
+    },
+    {
+      name: "Alien4",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "Aliens02.gif",
+    },
+    {
+      name: "Alien5",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image:
+        "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
+    },
+    {
+      name: "The Dabber",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image:
+        "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
+    },
+  ];
+  playerShip = {
+    name: "The USS Assembly",
+    hull: 20,
+    firepower: 3,
+    accuracy: 7,
+    missles: 3,
+  };
+};
+
 //Function attack player
 const attackPlayer = (player, attacker) => {
   //determine accuracy and firepower and see if hit landed
@@ -65,63 +122,6 @@ const endGame = () => {
   document.querySelector(".shields").disabled = true;
 };
 
-//Reset aliens array
-const resetShips = () => {
-  aliens = [
-    {
-      name: "Alien1",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image: "AS100.gif",
-    },
-    {
-      name: "Alien2",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image: "ZPurple.gif",
-    },
-    {
-      name: "Alien3",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image:
-        "https://media.istockphoto.com/id/1173828830/vector/green-alien-climbs-out-from-the-hole-of-space-with-stars-extraterrestrial-in-flat-cartoon.jpg?s=612x612&w=0&k=20&c=AymzvIizcfH7toqxjQN9F0THwYsuEMvOBBJn06VYoxY=",
-    },
-    {
-      name: "Alien4",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image: "Aliens02.gif",
-    },
-    {
-      name: "Alien5",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image:
-        "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
-    },
-    {
-      name: "The Dabber",
-      hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
-      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-      image:
-        "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
-    },
-  ];
-  playerShip = {
-    name: "The USS Assembly",
-    hull: 20,
-    firepower: 3,
-    accuracy: 7,
-    missles: 3,
-  };
-};
 //restart the game
 const restart = () => {
   // resetShips();
