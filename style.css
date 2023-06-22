@@ -4,6 +4,7 @@
 .logo {
   height: 250px;
   width: 50%;
+  /* margin-top: 70px; */
 }
 .main {
   background-color: darkgreen;
@@ -34,9 +35,9 @@
 }
 .stats {
   margin: 10px;
-  background-color: lightgreen;
-  color: black;
-  opacity: 0.55;
+  background-color: black;
+  color: lightgreen;
+  opacity: 0.7;
   text-align: center;
   width: 70%;
 }
@@ -52,6 +53,7 @@
   font-size: 30px;
   margin-left: 10px;
   border-radius: 25px;
+  width: 200px;
 }
 .missle {
   margin-top: 20px;
@@ -59,6 +61,7 @@
   font-size: 30px;
   margin-left: 10px;
   border-radius: 25px;
+  width: 200px;
 }
 .shields {
   height: 50px;
@@ -76,7 +79,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   /* align-content: center; */
   align-items: center;
 }
@@ -84,16 +87,22 @@
   height: 80px;
   font-size: 30px;
   margin-right: 20px;
+  border-radius: 25px;
+  width: 150px;
 }
 .continue {
   height: 80px;
   font-size: 30px;
   /* width: 100px; */
+  border-radius: 25px;
+  width: 300px;
 }
 .new {
   height: 80px;
   font-size: 30px;
   margin-right: 10px;
+  border-radius: 25px;
+  width: 100px;
 }
 .newGame {
   display: none;
@@ -114,9 +123,9 @@
 }
 .alienstats {
   margin: 10px;
-  background-color: gold;
-  color: black;
-  opacity: 0.55;
+  background-color: black;
+  color: lightgreen;
+  opacity: 0.7;
   text-align: center;
   /* width: 50%; */
 }
