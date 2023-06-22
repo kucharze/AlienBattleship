@@ -224,6 +224,12 @@ const nextRound = () => {
   }
 };
 
+//Aliens win
+const alienWinner = () => {};
+
+//Humans win
+const playerWinner = () => {};
+
 //Function for determining continue or retreat
 const continueOn = () => {
   let options = document.querySelector(".continueOn");
