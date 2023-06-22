@@ -168,6 +168,8 @@ const useShield = () => {
   updateConsole("Activating shields");
   playerShip.hull += shields;
 
+  updateConsole("Restored " + shields + " health");
+
   //disable shields button
   document.querySelector(".shields").disabled = true;
 
