@@ -127,6 +127,7 @@ const restart = () => {
   // resetShips();
   round = 0;
   clearConsole();
+  hideWinner();
   startUp();
 
   document.querySelector(".shoot").disabled = false;
@@ -197,6 +198,7 @@ const shootAlien = () => {
     if (playerShip.hull <= 0) {
       clearConsole();
       updateConsole("Ship Destroyed!! You loose");
+      alienWinner();
       endGame();
     }
   } else {
@@ -215,6 +217,7 @@ const nextRound = () => {
     //If so give option to retreat or stay
     console.log("You win, the aliens have been defeated");
     updateConsole("You win!! The aliens have been defeated!!");
+    playerWinner();
     endGame();
   } else {
     //If not say you win
@@ -225,10 +228,31 @@ const nextRound = () => {
 };
 
 //Aliens win
-const alienWinner = () => {};
+const alienWinner = () => {
+  document.querySelector(".winner").style = "display:block";
+
+  let winner = document.querySelector(".gamewinner");
+  console.log(winner);
+  winner.setAttribute("src", "WinAlien2.gif");
+};
 
 //Humans win
-const playerWinner = () => {};
+const playerWinner = () => {
+  document.querySelector(".winner").style = "display:block";
+
+  let winner = document.querySelector(".gamewinner");
+  console.log(winner);
+  winner.setAttribute("src", "WinEarth.gif");
+};
+
+//Hide the hide square
+const hideWinner = () => {
+  document.querySelector(".winner").style = "display:block";
+
+  let winner = document.querySelector(".gamewinner");
+  console.log(winner);
+  winner.setAttribute("src", "");
+};
 
 //Function for determining continue or retreat
 const continueOn = () => {
@@ -307,7 +331,7 @@ const escape = () => {
 
 //Update the center display to update
 const updateConsole = (message) => {
-  if (flags > 6) {
+  if (flags > 5) {
     clearConsole();
   }
   //Add a new message to the console
