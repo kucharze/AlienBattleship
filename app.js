@@ -37,8 +37,8 @@ const resetShips = () => {
     {
       name: "Scouter",
       hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
-      accuracy: Math.floor(Math.random() * (8 - 5 + 1) + 5),
+      firepower: Math.floor(Math.random() * (3 - 2 + 1) + 2),
+      accuracy: Math.floor(Math.random() * (7 - 5 + 1) + 5),
       image: "AS100.gif",
     },
     {
@@ -58,13 +58,13 @@ const resetShips = () => {
     {
       name: "The A team",
       hull: Math.floor(Math.random() * (6 - 4 + 1) + 4),
-      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
+      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image: "Aliens02.gif",
     },
     {
-      name: "Alien5",
-      hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
+      name: "THE CLAAAAAAW",
+      hull: Math.floor(Math.random() * (8 - 5 + 1) + 5),
       firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image:
@@ -72,7 +72,7 @@ const resetShips = () => {
     },
     {
       name: "The Dabber",
-      hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
+      hull: Math.floor(Math.random() * (9 - 5 + 1) + 5),
       firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       accuracy: Math.floor(Math.random() * (9 - 6 + 1) + 6),
       image:
