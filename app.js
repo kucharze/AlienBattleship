@@ -187,6 +187,13 @@ const restart = () => {
   ending.style = "display:none";
 };
 
+//No New game
+const noNewGame = () => {
+  console.log("No new game");
+  let ending = document.querySelector(".newGame");
+  ending.style = "display:none";
+};
+
 //fire a missle at the alien
 const fireMissles = () => {
   if (playerShip.missles > 0) {
