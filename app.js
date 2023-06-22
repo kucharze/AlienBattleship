@@ -260,6 +260,11 @@ const hideWinner = () => {
 const continueOn = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:block";
+
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = true;
+  document.querySelector(".missle").disabled = true;
+  document.querySelector(".shields").disabled = true;
 };
 
 //Display player or alien
@@ -321,6 +326,11 @@ const moveOn = () => {
 
   //Clear the console
   clearConsole();
+
+  //Reenable action buttons
+  document.querySelector(".shoot").disabled = false;
+  document.querySelector(".missle").disabled = false;
+  document.querySelector(".shields").disabled = false;
 
   displayNewAlien();
 };
