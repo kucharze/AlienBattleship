@@ -2,7 +2,7 @@
   display: none;
 }
 .logo {
-  height: 300px;
+  height: 250px;
   width: 50%;
 }
 .main {
@@ -70,12 +70,12 @@
 }
 .consol {
   width: 40%;
-  font-size: 30px;
+  font-size: 28px;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* align-content: center; */
   align-items: center;
 }
