@@ -62,6 +62,7 @@ const endGame = () => {
   ending.style = "display:block";
   document.querySelector(".shoot").disabled = true;
   document.querySelector(".missle").disabled = true;
+  document.querySelector(".shields").disabled = true;
 };
 
 //Reset aliens array
@@ -99,7 +100,7 @@ const resetShips = () => {
     {
       name: "Alien5",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
       image:
         "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
@@ -130,6 +131,7 @@ const restart = () => {
 
   document.querySelector(".shoot").disabled = false;
   document.querySelector(".missle").disabled = false;
+  document.querySelector(".shields").disabled = false;
 
   let ending = document.querySelector(".newGame");
   ending.style = "display:none";
