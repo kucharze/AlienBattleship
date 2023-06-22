@@ -110,12 +110,82 @@ const attackPlayer = (player, attacker) => {
 const endGame = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
+  let ending = document.querySelector(".newGame");
+  ending.style = "display:block";
   document.querySelector(".attack").disabled = true;
   document.querySelector(".missle").disabled = true;
 };
 
+//Reset aliens array
+const resetShips = () => {
+  aliens = [
+    {
+      name: "Alien1",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "Alien01.gif",
+    },
+    {
+      name: "Alien2",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "Alien02.gif",
+    },
+    {
+      name: "Alien3",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image:
+        "https://media.istockphoto.com/id/1173828830/vector/green-alien-climbs-out-from-the-hole-of-space-with-stars-extraterrestrial-in-flat-cartoon.jpg?s=612x612&w=0&k=20&c=AymzvIizcfH7toqxjQN9F0THwYsuEMvOBBJn06VYoxY=",
+    },
+    {
+      name: "Alien4",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image: "Aliens02.gif",
+    },
+    {
+      name: "Alien5",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image:
+        "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
+    },
+    {
+      name: "Alien6",
+      hull: Math.floor(Math.random() * (6 - 3) + 3),
+      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      accuracy: Math.floor(Math.random() * (8 - 6) + 6),
+      image:
+        "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
+    },
+  ];
+  playerShip = {
+    name: "The USS Assembly",
+    hull: 20,
+    firepower: 3,
+    accuracy: 7,
+    missles: 3,
+  };
+};
 //restart the game
-const restart = () => {};
+const restart = () => {
+  resetShips();
+  round = 0;
+  clearConsole();
+  startUp();
+
+  document.querySelector(".attack").disabled = false;
+  document.querySelector(".missle").disabled = false;
+
+  let ending = document.querySelector(".newGame");
+  ending.style = "display:none";
+};
 
 //fire a missle at the alien
 const fireMissles = () => {
@@ -123,14 +193,14 @@ const fireMissles = () => {
     playerShip.missles--;
     updateConsole("fire missle");
     aliens[round].hull -= 5;
+    displayAlien();
     if (aliens[round].hull <= 0) {
       console.log(aliens[round].name, "is defeated!!!");
       updateConsole(aliens[round].name + " is defeated!!");
-      displayAlien();
+
       nextRound();
     }
-    let mi = document.querySelector(".missilesleft");
-    mi.innerHTML = "Missles Left: " + playerShip.missles;
+    displayHuman();
   } else {
     updateConsole("There are no more missles");
   }
@@ -206,6 +276,9 @@ const displayAlien = () => {
 
 const displayHuman = () => {
   document.querySelector(".health").innerHTML = "Health: " + playerShip.hull;
+
+  document.querySelector(".missilesleft").innerHTML =
+    "Missles Left: " + playerShip.missles;
 };
 
 //Game start up
