@@ -18,65 +18,13 @@
 //Is this value less than the ship accuracy
 
 //The player ship
-let playerShip = {
-  name: "The USS Assembly",
-  hull: 20,
-  firepower: 3,
-  accuracy: 7,
-  missles: 3,
-};
+let playerShip = {};
 
 let flags = 0;
 
 //List of alien ships
 //Each of these values should be random
-let aliens = [
-  {
-    name: "Alien1",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image: "Alien01.gif",
-  },
-  {
-    name: "Alien2",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image: "Alien02.gif",
-  },
-  {
-    name: "Alien3",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image:
-      "https://media.istockphoto.com/id/1173828830/vector/green-alien-climbs-out-from-the-hole-of-space-with-stars-extraterrestrial-in-flat-cartoon.jpg?s=612x612&w=0&k=20&c=AymzvIizcfH7toqxjQN9F0THwYsuEMvOBBJn06VYoxY=",
-  },
-  {
-    name: "Alien4",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image: "Aliens02.gif",
-  },
-  {
-    name: "Alien5",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image:
-      "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
-  },
-  {
-    name: "Alien6",
-    hull: Math.floor(Math.random() * (6 - 3) + 3),
-    firepower: Math.floor(Math.random() * (4 - 2) + 2),
-    accuracy: Math.floor(Math.random() * (8 - 6) + 6),
-    image:
-      "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
-  },
-];
+let aliens = [];
 
 //Round number
 let round = 0;
@@ -112,7 +60,7 @@ const endGame = () => {
   options.style = "display:none";
   let ending = document.querySelector(".newGame");
   ending.style = "display:block";
-  document.querySelector(".attack").disabled = true;
+  document.querySelector(".shoot").disabled = true;
   document.querySelector(".missle").disabled = true;
 };
 
@@ -157,7 +105,7 @@ const resetShips = () => {
         "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
     },
     {
-      name: "Alien6",
+      name: "The Dabber",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
       firepower: Math.floor(Math.random() * (4 - 2) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
@@ -175,12 +123,12 @@ const resetShips = () => {
 };
 //restart the game
 const restart = () => {
-  resetShips();
+  // resetShips();
   round = 0;
   clearConsole();
   startUp();
 
-  document.querySelector(".attack").disabled = false;
+  document.querySelector(".shoot").disabled = false;
   document.querySelector(".missle").disabled = false;
 
   let ending = document.querySelector(".newGame");
@@ -297,6 +245,7 @@ const startUp = () => {
     playerShip.name,
     "has been called to defend"
   );
+  resetShips();
   displayNewAlien();
 
   displayHuman();
@@ -337,7 +286,7 @@ const updateConsole = (message) => {
 
   log.append(mess);
   flags++;
-  console.log("flags", flags);
+  // console.log("flags", flags);
 };
 
 //clear the console
