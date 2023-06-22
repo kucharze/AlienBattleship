@@ -107,7 +107,7 @@ const resetShips = () => {
     {
       name: "The Dabber",
       hull: Math.floor(Math.random() * (6 - 3) + 3),
-      firepower: Math.floor(Math.random() * (4 - 2) + 2),
+      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       accuracy: Math.floor(Math.random() * (8 - 6) + 6),
       image:
         "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
@@ -158,6 +158,26 @@ const fireMissles = () => {
     displayHuman();
   } else {
     updateConsole("There are no more missles");
+  }
+};
+
+//Activate shields to raise health by a random number
+//Takes a turn
+const useShield = () => {
+  let shields = Math.floor(Math.random() * (4 - 2 + 1) + 2);
+  updateConsole("Activating shields");
+  playerShip.hull += shields;
+
+  //disable shields button
+  document.querySelector(".shields").disabled = true;
+
+  //Alien gets a chance to attack
+  console.log(aliens[round].name, "readies a shot");
+  attackPlayer(playerShip, aliens[round]);
+  if (playerShip.hull <= 0) {
+    clearConsole();
+    updateConsole("Ship Destroyed!! You loose");
+    endGame();
   }
 };
 
