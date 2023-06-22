@@ -20,6 +20,8 @@
 //The player ship
 let playerShip = {};
 
+let playerPics = ["p80.gif", "EarthShip.gif", "ZBlue.gif"];
+
 let flags = 0;
 
 //List of alien ships
@@ -293,6 +295,11 @@ const displayHuman = () => {
 //Game start up
 const startUp = () => {
   resetShips();
+
+  let num = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+  let player = document
+    .querySelector(".player")
+    .setAttribute("src", playerPics[num]);
 
   updateConsole("The aliens are attacking");
   updateConsole(playerShip.name + " has been called to defend");
