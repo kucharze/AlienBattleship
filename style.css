@@ -104,6 +104,24 @@
   border-radius: 25px;
   width: 100px;
 }
+.ship {
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 25px;
+  width: 220px;
+}
+.ship1 {
+  height: 100%;
+  width: 100%;
+}
+.ship2 {
+  height: 100%;
+  width: 100%;
+}
+.ship3 {
+  height: 100%;
+  width: 100%;
+}
 .newGame {
   display: none;
 }

@@ -17,7 +17,7 @@
         <div class="playerSpace">
           <!--Players ship stats-->
           <div class="image">
-            <img src="p80.gif" alt="" class="player" />
+            <img src="" alt="" class="player" />
           </div>
           <div class="stats">
             <p class="name">The USS Assembly</p>
@@ -30,11 +30,15 @@
 
           <!-- --- attack-->
           <div class="attacks">
-            <button class="shoot" onclick="shootAlien()">Attack Alien</button>
-            <button class="missle" onclick="fireMissles()">Fire Missle</button>
+            <button class="shoot" disabled onclick="shootAlien()">
+              Attack Alien
+            </button>
+            <button class="missle" disabled onclick="fireMissles()">
+              Fire Missle
+            </button>
           </div>
           <div class="defend">
-            <button class="shields" onclick="useShield()">
+            <button class="shields" disabled onclick="useShield()">
               🛡️ Activate shields 🛡️
             </button>
           </div>
@@ -70,6 +74,22 @@
               <button class="new" onclick="restart()">Yes</button>
               <!-- --- Continue-->
               <button class="new" onclick="noNewGame()">No</button>
+            </div>
+
+            <div class="Chooseship">
+              <h2>Choose your ship?</h2>
+              <!-- --- Retreat-->
+              <button class="ship" onclick="restart()">
+                <img src="p80.gif" alt="" class="ship1" />
+              </button>
+              <!-- --- Continue-->
+              <button class="ship" onclick="noNewGame()">
+                <img src="EarthShip.gif" alt="" class="ship2" />
+              </button>
+
+              <button class="ship" onclick="noNewGame()">
+                <img src="ZBlue.gif" alt="" class="ship3" />
+              </button>
             </div>
           </div>
         </div>
