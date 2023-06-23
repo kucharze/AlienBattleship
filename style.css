@@ -3,7 +3,7 @@
     transform: translateX(20px);
   }
   100% {
-    transform: translateX(1500px);
+    transform: translateX(1300px);
   }
 }
 
@@ -13,7 +13,7 @@
     transform: translateX(-20px);
   }
   100% {
-    transform: translateX(-1500px);
+    transform: translateX(-1300px);
   }
 }
 
@@ -72,7 +72,7 @@
 
 .playerSpace {
   width: 30%;
-  border: solid darkblue;
+  border: solid black;
   font-size: 25px;
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@
 }
 .alienSpace {
   width: 30%;
-  border: solid darkblue;
+  border: solid black;
   font-size: 25px;
   display: flex;
   flex-direction: column;
