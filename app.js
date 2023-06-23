@@ -38,7 +38,7 @@ const resetShips = () => {
   aliens = [
     {
       name: "The Scout",
-      hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
+      hull: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       firepower: Math.floor(Math.random() * (3 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (7 - 5 + 1) + 5),
       image: "AS100.gif",
@@ -162,11 +162,15 @@ const fireMissles = () => {
       removeMissle();
       aliens[round].hull -= 5;
       displayAlien();
+      updateConsole("Direct hit");
       if (aliens[round].hull <= 0) {
         console.log(aliens[round].name, "is defeated!!!");
         updateConsole(aliens[round].name + " is defeated!!");
         setExplosion(document.querySelector(".alien"));
         nextRound();
+      } else {
+        //alien is still alive
+        alienTurn();
       }
       displayHuman();
     }, 4000);
@@ -179,10 +183,7 @@ const fireMissles = () => {
 const shootMissle = () => {
   let missle = document.querySelector(".player");
 
-  missle.setAttribute(
-    "src",
-    "https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif"
-  );
+  missle.setAttribute("src", "LM1.gif");
 
   missle.classList.toggle("moving");
   //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
@@ -210,13 +211,7 @@ const useShield = () => {
   document.querySelector(".shields").disabled = true;
 
   //Alien gets a chance to attack
-  console.log(aliens[round].name, "readies a shot");
-  attackPlayer(playerShip, aliens[round]);
-  if (playerShip.hull <= 0) {
-    clearConsole();
-    updateConsole("Ship Destroyed!! You loose");
-    endGame();
-  }
+  alienTurn();
 };
 
 //Process logic for shooting at an alien, and an alein shooting back
@@ -226,21 +221,25 @@ const shootAlien = () => {
 
   if (aliens[round].hull > 0) {
     //Alien is still alive
-    console.log(aliens[round].name, "readies a shot");
-    attackPlayer(playerShip, aliens[round]);
-    if (playerShip.hull <= 0) {
-      clearConsole();
-      updateConsole("Ship Destroyed!! You loose");
-      setExplosion(document.querySelector(".player"));
-      alienWinner();
-      endGame();
-    }
+    alienTurn();
   } else {
     clearConsole();
     console.log(aliens[round].name, "is defeated!!!");
     updateConsole(aliens[round].name + " is defeated!!");
     setExplosion(document.querySelector(".alien"));
     nextRound();
+  }
+};
+
+const alienTurn = () => {
+  console.log(aliens[round].name, "readies a shot");
+  attackPlayer(playerShip, aliens[round]);
+  if (playerShip.hull <= 0) {
+    clearConsole();
+    updateConsole("Ship Destroyed!! You loose");
+    setExplosion(document.querySelector(".player"));
+    alienWinner();
+    endGame();
   }
 };
 
