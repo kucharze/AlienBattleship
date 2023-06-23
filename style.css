@@ -1,3 +1,11 @@
+@keyframes moveMissle {
+  0% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
 .continueOn {
   display: none;
 }
