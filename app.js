@@ -181,6 +181,10 @@ const fireMissles = () => {
 
 //Play animation for firing missles
 const shootMissle = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = true;
+  document.querySelector(".missle").disabled = true;
+  document.querySelector(".shields").disabled = true;
   let missle = document.querySelector(".player");
 
   missle.setAttribute("src", "LM1.gif");
@@ -191,6 +195,10 @@ const shootMissle = () => {
 
 //remove animation and return ship image
 const removeMissle = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = false;
+  document.querySelector(".missle").disabled = false;
+  document.querySelector(".shields").disabled = false;
   let missle = document.querySelector(".player");
 
   missle.classList.toggle("movingMissle");
@@ -238,6 +246,10 @@ const shootAlien = () => {
 //Animate normal attacks for player
 //Play animation for firing missles
 const shootShip = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = true;
+  document.querySelector(".missle").disabled = true;
+  document.querySelector(".shields").disabled = true;
   let missle = document.querySelector(".player");
 
   missle.setAttribute("src", "bb001.jpg");
@@ -247,6 +259,10 @@ const shootShip = () => {
 
 //remove animation and return ship image
 const removeShoot = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = false;
+  document.querySelector(".missle").disabled = false;
+  document.querySelector(".shields").disabled = false;
   let missle = document.querySelector(".player");
 
   missle.classList.toggle("moving");
@@ -274,6 +290,10 @@ const alienTurn = () => {
 //Animate normal attacks
 //Play animation for firing missles
 const shootPlayer = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = true;
+  document.querySelector(".missle").disabled = true;
+  document.querySelector(".shields").disabled = true;
   let missle = document.querySelector(".alien");
 
   missle.setAttribute("src", "bb001.jpg");
@@ -283,6 +303,10 @@ const shootPlayer = () => {
 
 //remove animation and return ship image
 const removeShootPlayer = () => {
+  //Disable action buttons
+  document.querySelector(".shoot").disabled = false;
+  document.querySelector(".missle").disabled = false;
+  document.querySelector(".shields").disabled = false;
   let missle = document.querySelector(".alien");
 
   missle.classList.toggle("movingBack");
