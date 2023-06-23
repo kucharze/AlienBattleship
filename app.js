@@ -35,21 +35,21 @@ let round = 0;
 const resetShips = () => {
   aliens = [
     {
-      name: "Scouter",
+      name: "The Scout",
       hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
       firepower: Math.floor(Math.random() * (3 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (7 - 5 + 1) + 5),
       image: "AS100.gif",
     },
     {
-      name: "Alien2",
+      name: "The Mussle",
       hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
       firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 5 + 1) + 5),
       image: "ZPurple.gif",
     },
     {
-      name: "Alien3",
+      name: "The Abductor",
       hull: Math.floor(Math.random() * (6 - 4 + 1) + 4),
       firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
