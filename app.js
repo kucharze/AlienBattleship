@@ -217,30 +217,78 @@ const useShield = () => {
 //Process logic for shooting at an alien, and an alein shooting back
 const shootAlien = () => {
   console.log("Reading a shot");
-  attackPlayer(aliens[round], playerShip);
+  shootShip();
 
-  if (aliens[round].hull > 0) {
-    //Alien is still alive
-    alienTurn();
-  } else {
-    clearConsole();
-    console.log(aliens[round].name, "is defeated!!!");
-    updateConsole(aliens[round].name + " is defeated!!");
-    setExplosion(document.querySelector(".alien"));
-    nextRound();
-  }
+  setTimeout(() => {
+    attackPlayer(aliens[round], playerShip);
+    removeShoot();
+    if (aliens[round].hull > 0) {
+      //Alien is still alive
+      alienTurn();
+    } else {
+      clearConsole();
+      console.log(aliens[round].name, "is defeated!!!");
+      updateConsole(aliens[round].name + " is defeated!!");
+      setExplosion(document.querySelector(".alien"));
+      nextRound();
+    }
+  }, 4000);
+};
+
+//Animate normal attacks for player
+//Play animation for firing missles
+const shootShip = () => {
+  let missle = document.querySelector(".player");
+
+  missle.setAttribute("src", "LM1.gif");
+
+  missle.classList.toggle("moving");
+  //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
+};
+
+//remove animation and return ship image
+const removeShoot = () => {
+  let missle = document.querySelector(".player");
+
+  missle.classList.toggle("moving");
+
+  missle.setAttribute("src", playerPics[shipSelection]);
 };
 
 const alienTurn = () => {
   console.log(aliens[round].name, "readies a shot");
-  attackPlayer(playerShip, aliens[round]);
-  if (playerShip.hull <= 0) {
-    clearConsole();
-    updateConsole("Ship Destroyed!! You loose");
-    setExplosion(document.querySelector(".player"));
-    alienWinner();
-    endGame();
-  }
+  shootPlayer();
+
+  setTimeout(() => {
+    attackPlayer(playerShip, aliens[round]);
+    removeShootPlayer();
+    if (playerShip.hull <= 0) {
+      clearConsole();
+      updateConsole("Ship Destroyed!! You loose");
+      setExplosion(document.querySelector(".player"));
+      alienWinner();
+      endGame();
+    }
+  }, 4000);
+};
+
+//Animate normal attacks
+//Play animation for firing missles
+const shootPlayer = () => {
+  let missle = document.querySelector(".alien");
+
+  missle.setAttribute("src", "LM1.gif");
+
+  missle.classList.toggle("movingBack");
+};
+
+//remove animation and return ship image
+const removeShootPlayer = () => {
+  let missle = document.querySelector(".alien");
+
+  missle.classList.toggle("movingBack");
+
+  missle.setAttribute("src", aliens[round].image);
 };
 
 //Determine if we need another round
