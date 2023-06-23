@@ -22,6 +22,8 @@ let playerShip = {};
 
 let playerPics = ["p80.gif", "EarthShip.gif", "ZBlue.gif"];
 
+let shipSelection = 0;
+
 let flags = 0;
 
 //List of alien ships
@@ -155,18 +157,44 @@ const fireMissles = () => {
   if (playerShip.missles > 0) {
     playerShip.missles--;
     updateConsole("fire missle");
-    aliens[round].hull -= 5;
-    displayAlien();
-    if (aliens[round].hull <= 0) {
-      console.log(aliens[round].name, "is defeated!!!");
-      updateConsole(aliens[round].name + " is defeated!!");
-      setExplosion(document.querySelector(".alien"));
-      nextRound();
-    }
-    displayHuman();
+    shootMissle();
+    setTimeout(() => {
+      removeMissle();
+      aliens[round].hull -= 5;
+      displayAlien();
+      if (aliens[round].hull <= 0) {
+        console.log(aliens[round].name, "is defeated!!!");
+        updateConsole(aliens[round].name + " is defeated!!");
+        setExplosion(document.querySelector(".alien"));
+        nextRound();
+      }
+      displayHuman();
+    }, 4000);
   } else {
     updateConsole("There are no more missles");
   }
+};
+
+//Play animation for firing missles
+const shootMissle = () => {
+  let missle = document.querySelector(".player");
+
+  missle.setAttribute(
+    "src",
+    "https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif"
+  );
+
+  missle.classList.toggle("moving");
+  //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
+};
+
+//remove animation and return ship image
+const removeMissle = () => {
+  let missle = document.querySelector(".player");
+
+  missle.classList.toggle("moving");
+
+  missle.setAttribute("src", playerPics[shipSelection]);
 };
 
 //Activate shields to raise health by a random number
@@ -328,6 +356,8 @@ const chooseShip = (shipNum) => {
   document.querySelector(".shoot").disabled = false;
   document.querySelector(".missle").disabled = false;
   document.querySelector(".shields").disabled = false;
+
+  shipSelection = shipNum;
 
   document.querySelector(".Chooseship").style = "display:none";
 };
