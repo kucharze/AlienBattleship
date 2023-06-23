@@ -28,17 +28,17 @@
   margin-top: 20px;
 }
 .moving {
-  animation: moveMissle 4s;
+  animation: moveMissle 3s;
   height: 100px;
   width: 50%;
 }
 .movingMissle {
-  animation: moveMissle 4s;
+  animation: moveMissle 3s;
   height: 150px;
 }
 
 .movingBack {
-  animation: moveAlien 4s;
+  animation: moveAlien 3s;
   height: 100px;
   width: 50%;
 }

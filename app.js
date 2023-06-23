@@ -173,7 +173,7 @@ const fireMissles = () => {
         alienTurn();
       }
       displayHuman();
-    }, 4000);
+    }, 3000);
   } else {
     updateConsole("There are no more missles");
   }
@@ -241,7 +241,7 @@ const shootAlien = () => {
       setExplosion(document.querySelector(".alien"));
       nextRound();
     }
-  }, 4000);
+  }, 3000);
 };
 
 //Animate normal attacks for player
@@ -285,7 +285,7 @@ const alienTurn = () => {
       alienWinner();
       endGame();
     }
-  }, 4000);
+  }, 3000);
 };
 
 //Animate normal attacks
