@@ -50,7 +50,7 @@ const resetShips = () => {
     },
     {
       name: "Alien3",
-      hull: Math.floor(Math.random() * (6 - 3 + 1) + 3),
+      hull: Math.floor(Math.random() * (6 - 4 + 1) + 4),
       firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image: "AlienPilot100.gif",
@@ -58,14 +58,14 @@ const resetShips = () => {
     {
       name: "The A team",
       hull: Math.floor(Math.random() * (6 - 4 + 1) + 4),
-      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
+      firepower: Math.floor(Math.random() * (5 - 2 + 1) + 2),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image: "Aliens02.gif",
     },
     {
       name: "THE CLAAAAAAW",
       hull: Math.floor(Math.random() * (8 - 5 + 1) + 5),
-      firepower: Math.floor(Math.random() * (4 - 2 + 1) + 2),
+      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image:
         "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-s1q5sn_ecb74152.jpeg?region=0,0,450,450",
@@ -73,7 +73,7 @@ const resetShips = () => {
     {
       name: "The Dabber",
       hull: Math.floor(Math.random() * (9 - 6 + 1) + 6),
-      firepower: Math.floor(Math.random() * (6 - 4 + 1) + 4),
+      firepower: Math.floor(Math.random() * (7 - 4 + 1) + 4),
       accuracy: Math.floor(Math.random() * (9 - 6 + 1) + 6),
       image:
         "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
