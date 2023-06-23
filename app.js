@@ -72,8 +72,8 @@ const resetShips = () => {
     },
     {
       name: "The Dabber",
-      hull: Math.floor(Math.random() * (9 - 5 + 1) + 5),
-      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
+      hull: Math.floor(Math.random() * (9 - 6 + 1) + 6),
+      firepower: Math.floor(Math.random() * (6 - 4 + 1) + 4),
       accuracy: Math.floor(Math.random() * (9 - 6 + 1) + 6),
       image:
         "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
@@ -83,7 +83,7 @@ const resetShips = () => {
     name: "The USS Assembly",
     hull: 20,
     firepower: 3,
-    accuracy: 7,
+    accuracy: 1,
     missles: 3,
   };
 };
