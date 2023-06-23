@@ -3,15 +3,24 @@
     transform: translateX(20px);
   }
   100% {
-    transform: translateX(200px);
+    transform: translateX(1200px);
   }
+}
+.player {
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+}
+.moving {
+  animation: moveMissle 4s;
+  height: 200px;
 }
 .continueOn {
   display: none;
 }
 .logo {
   height: 200px;
-  width: 50%;
+  width: 40%;
   /* margin-top: 70px; */
 }
 .main {
@@ -50,11 +59,6 @@
   opacity: 0.7;
   text-align: center;
   width: 70%;
-}
-.player {
-  height: 300px;
-  width: 100%;
-  margin-top: 20px;
 }
 
 .shoot {
