@@ -9,6 +9,7 @@
 
 @keyframes moveAlien {
   0% {
+    transform: rotate(180deg);
     transform: translateX(-20px);
   }
   100% {
@@ -28,12 +29,18 @@
 }
 .moving {
   animation: moveMissle 4s;
-  height: 200px;
+  height: 100px;
+  width: 50%;
+}
+.movingMissle {
+  animation: moveMissle 4s;
+  height: 150px;
 }
 
 .movingBack {
   animation: moveAlien 4s;
-  height: 200px;
+  height: 100px;
+  width: 50%;
 }
 .continueOn {
   display: none;

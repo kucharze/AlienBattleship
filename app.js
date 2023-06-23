@@ -185,7 +185,7 @@ const shootMissle = () => {
 
   missle.setAttribute("src", "LM1.gif");
 
-  missle.classList.toggle("moving");
+  missle.classList.toggle("movingMissle");
   //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
 };
 
@@ -193,7 +193,7 @@ const shootMissle = () => {
 const removeMissle = () => {
   let missle = document.querySelector(".player");
 
-  missle.classList.toggle("moving");
+  missle.classList.toggle("movingMissle");
 
   missle.setAttribute("src", playerPics[shipSelection]);
 };
@@ -240,10 +240,9 @@ const shootAlien = () => {
 const shootShip = () => {
   let missle = document.querySelector(".player");
 
-  missle.setAttribute("src", "LM1.gif");
+  missle.setAttribute("src", "bb001.jpg");
 
   missle.classList.toggle("moving");
-  //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
 };
 
 //remove animation and return ship image
@@ -277,7 +276,7 @@ const alienTurn = () => {
 const shootPlayer = () => {
   let missle = document.querySelector(".alien");
 
-  missle.setAttribute("src", "LM1.gif");
+  missle.setAttribute("src", "bb001.jpg");
 
   missle.classList.toggle("movingBack");
 };
