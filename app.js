@@ -190,7 +190,6 @@ const shootMissle = () => {
   missle.setAttribute("src", "LM1.gif");
 
   missle.classList.toggle("movingMissle");
-  //https://media.tenor.com/hcUjAksyfTcAAAAM/small-missile-small-missile-turret-luna.gif
 };
 
 //remove animation and return ship image
@@ -225,6 +224,9 @@ const useShield = () => {
 
 //Process logic for shooting at an alien, and an alein shooting back
 const shootAlien = () => {
+  //main game loop
+  //You attack alien, than determine if it is alive
+  //If alive, alien attacks you and then determin if you survive
   console.log("Reading a shot");
   shootShip();
 
@@ -271,6 +273,7 @@ const removeShoot = () => {
   missle.setAttribute("src", playerPics[shipSelection]);
 };
 
+//Alien takes there turn
 const alienTurn = () => {
   console.log(aliens[round].name, "readies a shot");
   shootPlayer();
@@ -450,7 +453,6 @@ const moveOn = () => {
 
 //Escape state(The game is over and you fled)
 //Show player has escaped along with how many ships are destroyed
-//In future, allow player to repair but limit times of escape?
 //Function to escape and end the game that way
 const escape = () => {
   endGame();
@@ -489,7 +491,4 @@ const setExplosion = (element) => {
   element.setAttribute("src", "Boom.gif");
 };
 
-//main game loop
-//You attack alien, than determine if it is alive
-//If alive, alien attacks you and then determin if you survive
 startUp();
