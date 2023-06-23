@@ -132,12 +132,15 @@ const restart = () => {
   hideWinner();
   startUp();
 
-  document.querySelector(".shoot").disabled = false;
-  document.querySelector(".missle").disabled = false;
-  document.querySelector(".shields").disabled = false;
+  let player = document
+    .querySelector(".player")
+    .setAttribute("src", "WinEarth.gif");
 
   let ending = document.querySelector(".newGame");
   ending.style = "display:none";
+
+  //Show choose ship screen
+  document.querySelector(".Chooseship").style = "display:block";
 };
 
 //No New game
@@ -300,11 +303,6 @@ const displayHuman = () => {
 //Game start up
 const startUp = () => {
   resetShips();
-
-  // let num = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-  // let player = document
-  //   .querySelector(".player")
-  //   .setAttribute("src", playerPics[num]);
 
   updateConsole("The aliens are attacking");
   updateConsole(playerShip.name + " has been called to defend");
