@@ -29,8 +29,9 @@
 }
 .moving {
   animation: moveMissle 3s;
-  height: 100px;
+  height: 50px;
   width: 50%;
+  margin-top: 70px;
 }
 .movingMissle {
   animation: moveMissle 3s;
@@ -39,14 +40,15 @@
 
 .movingBack {
   animation: moveAlien 3s;
-  height: 100px;
+  height: 50px;
   width: 50%;
+  margin-top: 70px;
 }
 .continueOn {
   display: none;
 }
 .logo {
-  height: 250px;
+  height: 200px;
   /* width: 40%; */
   /* margin-top: 70px; */
 }
@@ -58,7 +60,7 @@
   border-bottom: darkgreen solid;
   border-width: 20px;
   padding-top: 20px;
-  height: 1050px;
+  height: 1200px;
 }
 
 .playArea {
@@ -66,8 +68,9 @@
   display: flex;
   background-size: cover;
   /* padding-top: 10px; */
-  height: 1000px;
+  height: 950px;
   border: solid green;
+  margin: 20px;
 }
 
 .playerSpace {
