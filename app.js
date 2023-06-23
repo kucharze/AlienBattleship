@@ -160,7 +160,7 @@ const fireMissles = () => {
     if (aliens[round].hull <= 0) {
       console.log(aliens[round].name, "is defeated!!!");
       updateConsole(aliens[round].name + " is defeated!!");
-
+      setExplosion(document.querySelector(".alien"));
       nextRound();
     }
     displayHuman();
@@ -203,6 +203,7 @@ const shootAlien = () => {
     if (playerShip.hull <= 0) {
       clearConsole();
       updateConsole("Ship Destroyed!! You loose");
+      setExplosion(document.querySelector(".player"));
       alienWinner();
       endGame();
     }
@@ -210,6 +211,7 @@ const shootAlien = () => {
     clearConsole();
     console.log(aliens[round].name, "is defeated!!!");
     updateConsole(aliens[round].name + " is defeated!!");
+    setExplosion(document.querySelector(".alien"));
     nextRound();
   }
 };
@@ -359,7 +361,8 @@ const escape = () => {
 
 //Update the center display to update
 const updateConsole = (message) => {
-  if (flags > 5) {
+  flags++;
+  if (flags > 6) {
     clearConsole();
   }
   //Add a new message to the console
@@ -369,7 +372,7 @@ const updateConsole = (message) => {
   mess.innerHTML = message;
 
   log.append(mess);
-  flags++;
+
   // console.log("flags", flags);
 };
 
@@ -381,9 +384,9 @@ const clearConsole = () => {
 };
 
 //Set explosion method
-const setExplosion = () => {
+const setExplosion = (element) => {
   //Set an explosion picture for either the player or the alien
-  // https://as1.ftcdn.net/v2/jpg/05/63/16/14/1000_F_563161494_iYVA1GGkVrd6QYPJtEXWSfJ6xr4OuZ77.jpg
+  element.setAttribute("src", "Boom.gif");
 };
 
 //main game loop
