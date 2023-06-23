@@ -212,6 +212,7 @@ const useShield = () => {
   let shields = Math.floor(Math.random() * (4 - 2 + 1) + 2);
   updateConsole("Activating shields");
   playerShip.hull += shields;
+  displayHuman();
 
   updateConsole("Restored " + shields + " health");
 
