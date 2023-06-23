@@ -348,9 +348,7 @@ const startUp = () => {
 
 //choose the ship to use
 const chooseShip = (shipNum) => {
-  let player = document
-    .querySelector(".player")
-    .setAttribute("src", playerPics[shipNum]);
+  document.querySelector(".player").setAttribute("src", playerPics[shipNum]);
 
   document.querySelector(".shoot").disabled = false;
   document.querySelector(".missle").disabled = false;
@@ -359,6 +357,7 @@ const chooseShip = (shipNum) => {
   shipSelection = shipNum;
 
   document.querySelector(".Chooseship").style = "display:none";
+  clearConsole();
 };
 
 //Function to continue
