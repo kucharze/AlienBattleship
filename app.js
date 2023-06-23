@@ -83,7 +83,7 @@ const resetShips = () => {
     name: "The USS Assembly",
     hull: 20,
     firepower: 3,
-    accuracy: 1,
+    accuracy: 7,
     missles: 3,
   };
 };
