@@ -6,6 +6,16 @@
     transform: translateX(1500px);
   }
 }
+
+@keyframes moveAlien {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(-1500px);
+  }
+}
+
 .player {
   height: 300px;
   width: 100%;
@@ -13,6 +23,11 @@
 }
 .moving {
   animation: moveMissle 4s;
+  height: 200px;
+}
+
+.movingBack {
+  animation: moveAlien 4s;
   height: 200px;
 }
 .continueOn {
