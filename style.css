@@ -21,6 +21,11 @@
   width: 100%;
   margin-top: 20px;
 }
+.alien {
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+}
 .moving {
   animation: moveMissle 4s;
   height: 200px;
@@ -163,11 +168,7 @@
   /* align-content: center; */
   align-items: center;
 }
-.alien {
-  height: 300px;
-  width: 100%;
-  margin-top: 20px;
-}
+
 .alienstats {
   margin: 10px;
   background-color: black;
