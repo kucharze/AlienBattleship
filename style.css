@@ -13,7 +13,7 @@
     transform: translateX(-20px);
   }
   100% {
-    transform: translateX(-1300px);
+    transform: translateX(-1100px);
   }
 }
 
@@ -31,7 +31,7 @@
   animation: moveMissle 3s;
   height: 50px;
   width: 50%;
-  margin-top: 70px;
+  margin-top: 140px;
 }
 .movingMissle {
   animation: moveMissle 3s;
@@ -42,7 +42,7 @@
   animation: moveAlien 3s;
   height: 50px;
   width: 50%;
-  margin-top: 70px;
+  margin-top: 140px;
 }
 .continueOn {
   display: none;
@@ -64,9 +64,10 @@
 }
 
 .playArea {
-  background-image: url(AlienBackground03.gif);
-  display: flex;
+  background-image: url(sky3-1.JPG);
   background-size: cover;
+  display: flex;
+
   /* padding-top: 10px; */
   height: 950px;
   border: solid green;
@@ -74,7 +75,7 @@
 }
 
 .playerSpace {
-  width: 40%;
+  width: 35%;
   border: solid black;
   font-size: 25px;
   display: flex;
@@ -119,15 +120,23 @@
   border-radius: 25px;
 }
 .consol {
-  width: 30%;
+  background-image: url(BlueSky001.gif);
+  background-size: cover;
+  width: 35%;
   font-size: 25px;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   /* align-content: center; */
   align-items: center;
+}
+.gamelog {
+  border-bottom: solid navy;
+  border-top: solid navy;
+  border-radius: 25px;
+  width: 40%;
 }
 .retreat {
   height: 70px;
@@ -172,7 +181,7 @@
   display: none;
 }
 .alienSpace {
-  width: 40%;
+  width: 35%;
   border: solid black;
   font-size: 25px;
   display: flex;

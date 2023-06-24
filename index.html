@@ -11,99 +11,97 @@
   </head>
   <body>
     <!--main area-->
-    <div class="main">
-      <img src="AlienInvasion1.jpg" alt="" class="logo" />
-      <div class="playArea">
-        <!-- ---player div-->
-        <div class="playerSpace">
-          <!--Players ship stats-->
-          <div class="image">
-            <img src="WinEarth.gif" alt="" class="player" />
+
+    <div class="playArea">
+      <!-- ---player div-->
+      <div class="playerSpace">
+        <!--Players ship stats-->
+        <div class="image">
+          <img src="WinEarth.gif" alt="" class="player" />
+        </div>
+        <div class="stats">
+          <p class="name"><strong>The USS Assembly</strong></p>
+          <p class="health">health</p>
+          <p class="firepower">Firepower: 3</p>
+          <p class="accuracy">Accuracy: 7</p>
+          <p class="misslepower">Misssile firepower: 5</p>
+          <p class="missilesleft">Missles Left: 3</p>
+        </div>
+
+        <!-- --- attack-->
+        <div class="attacks">
+          <button class="shoot" disabled onclick="shootAlien()">
+            Fire Ray Gun
+          </button>
+          <button class="missle" disabled onclick="fireMissles()">
+            Fire Missle
+          </button>
+        </div>
+        <div class="defend">
+          <button class="shields" disabled onclick="useShield()">
+            🛡️ Activate shields 🛡️
+          </button>
+        </div>
+      </div>
+
+      <!--Console for what happend-->
+      <div class="consol">
+        <!--Last thing that happend-->
+        <!--Will be updated to record all things that happen-->
+        <!--Stats if escaped-->
+        <div class="gamelog"></div>
+
+        <div class="winner">
+          <img src="" alt="" class="gamewinner" />
+        </div>
+        <div class="buttons">
+          <!--Button section-->
+          <!-- Make below a separate div and hide at first?? -->
+          <div class="continueOn">
+            <h2>Should we continue?</h2>
+            <!-- --- Retreat-->
+            <button class="retreat" onclick="escape()">Retreat</button>
+            <!-- --- Continue-->
+            <button class="continue" onclick="moveOn()">
+              Fight the next ship
+            </button>
           </div>
-          <div class="stats">
-            <p class="name"><strong>The USS Assembly</strong></p>
-            <p class="health">health</p>
-            <p class="firepower">Firepower: 3</p>
-            <p class="accuracy">Accuracy: 7</p>
-            <p class="misslepower">Misssile firepower: 5</p>
-            <p class="missilesleft">Missles Left: 3</p>
+          <!-- Make below a separate div and hide at first?? -->
+          <div class="newGame">
+            <h3>Start a new game?</h3>
+            <!-- --- Retreat-->
+            <button class="new" onclick="restart()">Yes</button>
+            <!-- --- Continue-->
+            <button class="new" onclick="noNewGame()">No</button>
           </div>
 
-          <!-- --- attack-->
-          <div class="attacks">
-            <button class="shoot" disabled onclick="shootAlien()">
-              Fire Ray Gun
+          <div class="Chooseship">
+            <h3>Choose your ship?</h3>
+            <!-- --- Retreat-->
+            <button class="ship" onclick="chooseShip(0)">
+              <img src="p80.gif" alt="" class="ship1" />
             </button>
-            <button class="missle" disabled onclick="fireMissles()">
-              Fire Missle
+            <!-- --- Continue-->
+            <button class="ship" onclick="chooseShip(1)">
+              <img src="EarthShip.gif" alt="" class="ship2" />
             </button>
-          </div>
-          <div class="defend">
-            <button class="shields" disabled onclick="useShield()">
-              🛡️ Activate shields 🛡️
+
+            <button class="ship" onclick="chooseShip(2)">
+              <img src="ZBlue.gif" alt="" class="ship3" />
             </button>
           </div>
         </div>
-
-        <!--Console for what happend-->
-        <div class="consol">
-          <!--Last thing that happend-->
-          <!--Will be updated to record all things that happen-->
-          <!--Stats if escaped-->
-          <div class="gamelog"></div>
-
-          <div class="winner">
-            <img src="" alt="" class="gamewinner" />
-          </div>
-          <div class="buttons">
-            <!--Button section-->
-            <!-- Make below a separate div and hide at first?? -->
-            <div class="continueOn">
-              <h2>Should we continue?</h2>
-              <!-- --- Retreat-->
-              <button class="retreat" onclick="escape()">Retreat</button>
-              <!-- --- Continue-->
-              <button class="continue" onclick="moveOn()">
-                Fight the next ship
-              </button>
-            </div>
-            <!-- Make below a separate div and hide at first?? -->
-            <div class="newGame">
-              <h3>Start a new game?</h3>
-              <!-- --- Retreat-->
-              <button class="new" onclick="restart()">Yes</button>
-              <!-- --- Continue-->
-              <button class="new" onclick="noNewGame()">No</button>
-            </div>
-
-            <div class="Chooseship">
-              <h3>Choose your ship?</h3>
-              <!-- --- Retreat-->
-              <button class="ship" onclick="chooseShip(0)">
-                <img src="p80.gif" alt="" class="ship1" />
-              </button>
-              <!-- --- Continue-->
-              <button class="ship" onclick="chooseShip(1)">
-                <img src="EarthShip.gif" alt="" class="ship2" />
-              </button>
-
-              <button class="ship" onclick="chooseShip(2)">
-                <img src="ZBlue.gif" alt="" class="ship3" />
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- ---Alien div-->
-        <div class="alienSpace">
-          <!--Alien pic and ship stats-->
-          <div class="imageAlien">
-            <img src="" alt="" class="alien" />
-            <div class="alienstats">
-              <p class="alienname"></p>
-              <p class="healthAlien">health</p>
-              <p class="firepowerAlien">firepower</p>
-              <p class="accuracyAlien">Accuracy</p>
-            </div>
+      </div>
+      <!-- ---Alien div-->
+      <div class="alienSpace">
+        <!--Alien pic and ship stats-->
+        <div class="imageAlien">
+          <img src="" alt="" class="alien" />
+          <div class="alienstats">
+            <p class="alienname"></p>
+            <p class="healthAlien">health</p>
+            <p class="firepowerAlien">firepower</p>
+            <p class="accuracyAlien">Accuracy</p>
           </div>
         </div>
       </div>
