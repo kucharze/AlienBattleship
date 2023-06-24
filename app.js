@@ -179,6 +179,24 @@ const fireMissles = () => {
   }
 };
 
+const setBoomPlayer = () => {
+  item.setAttribute("src", "Boom2.gif");
+
+  setTimeout(() => {
+    item.setAttribute("src", playerPics[shipSelection]);
+  }, 1000);
+};
+
+const setBoomAlien = () => {
+  let item = document.querySelector(".alien");
+
+  item.setAttribute("src", "Boom2.gif");
+
+  setTimeout(() => {
+    item.setAttribute("src", aliens[round].image);
+  }, 1000);
+};
+
 //Play animation for firing missles
 const shootMissle = () => {
   //Disable action buttons
