@@ -67,12 +67,9 @@
   background-image: url(sky3-1.JPG);
   background-size: cover;
   display: flex;
-
   /* padding-top: 10px; */
   height: 950px;
-  /* border: solid gold; */
   border: 10px green solid;
-  /* border-bottom: 30px green solid; */
   /* border-width: 10px; */
   margin: 20px;
 }
@@ -132,7 +129,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* align-content: center; */
   align-items: center;
 }
 .gamelog {
@@ -151,7 +147,6 @@
 .continue {
   height: 70px;
   font-size: 30px;
-  /* width: 100px; */
   border-radius: 25px;
   width: 300px;
 }
