@@ -70,7 +70,10 @@
 
   /* padding-top: 10px; */
   height: 950px;
-  border: solid green;
+  /* border: solid gold; */
+  border: 10px green solid;
+  /* border-bottom: 30px green solid; */
+  /* border-width: 10px; */
   margin: 20px;
 }
 
@@ -136,7 +139,7 @@
   border-bottom: solid navy;
   border-top: solid navy;
   border-radius: 25px;
-  width: 40%;
+  width: 90%;
 }
 .retreat {
   height: 70px;
