@@ -255,7 +255,7 @@ const shootShip = () => {
   document.querySelector(".shields").disabled = true;
   let missle = document.querySelector(".player");
 
-  missle.setAttribute("src", "bb001.jpg");
+  missle.setAttribute("src", "Eray1.jpg");
 
   missle.classList.toggle("moving");
 };
@@ -300,7 +300,7 @@ const shootPlayer = () => {
   document.querySelector(".shields").disabled = true;
   let missle = document.querySelector(".alien");
 
-  missle.setAttribute("src", "bb001.jpg");
+  missle.setAttribute("src", "aray2.jpg");
 
   missle.classList.toggle("movingBack");
 };
