@@ -100,8 +100,10 @@ const attackPlayer = (player, attacker) => {
     console.log("The shot hit", player.hull);
     if (attacker === playerShip) {
       updateConsole("Player shot hit");
+      setBoomAlien();
     } else {
       updateConsole("Alien shot hit");
+      setBoomPlayer();
     }
   } else {
     console.log("The shot missed");
@@ -163,16 +165,19 @@ const fireMissles = () => {
       aliens[round].hull -= 5;
       displayAlien();
       updateConsole("Direct hit");
-      if (aliens[round].hull <= 0) {
-        console.log(aliens[round].name, "is defeated!!!");
-        updateConsole(aliens[round].name + " is defeated!!");
-        setExplosion(document.querySelector(".alien"));
-        nextRound();
-      } else {
-        //alien is still alive
-        alienTurn();
-      }
-      displayHuman();
+      setBoomAlien();
+      setTimeout(() => {
+        if (aliens[round].hull <= 0) {
+          console.log(aliens[round].name, "is defeated!!!");
+          updateConsole(aliens[round].name + " is defeated!!");
+          setExplosion(document.querySelector(".alien"));
+          nextRound();
+        } else {
+          //alien is still alive
+          alienTurn();
+        }
+        displayHuman();
+      }, 1000);
     }, 3000);
   } else {
     updateConsole("There are no more missles");
@@ -180,20 +185,26 @@ const fireMissles = () => {
 };
 
 const setBoomPlayer = () => {
+  let item = document.querySelector(".player");
   item.setAttribute("src", "Boom2.gif");
 
   setTimeout(() => {
-    item.setAttribute("src", playerPics[shipSelection]);
+    if (playerShip.hull >= 0) {
+      item.setAttribute("src", playerPics[shipSelection]);
+    }
   }, 1000);
 };
 
 const setBoomAlien = () => {
+  console.log("alien boom");
   let item = document.querySelector(".alien");
 
   item.setAttribute("src", "Boom2.gif");
 
   setTimeout(() => {
-    item.setAttribute("src", aliens[round].image);
+    if (aliens[round].hull >= 0) {
+      item.setAttribute("src", aliens[round].image);
+    }
   }, 1000);
 };
 
@@ -250,10 +261,13 @@ const shootAlien = () => {
 
   setTimeout(() => {
     attackPlayer(aliens[round], playerShip);
+    // setTimeout(() => {
     removeShoot();
     if (aliens[round].hull > 0) {
       //Alien is still alive
-      alienTurn();
+      setTimeout(() => {
+        alienTurn();
+      }, 1000);
     } else {
       clearConsole();
       console.log(aliens[round].name, "is defeated!!!");
@@ -261,6 +275,7 @@ const shootAlien = () => {
       setExplosion(document.querySelector(".alien"));
       nextRound();
     }
+    // }, 1000);
   }, 3000);
 };
 
@@ -339,8 +354,8 @@ const removeShootPlayer = () => {
 //Determine if we need another round
 const nextRound = () => {
   //Determine if there are still aliens left
-  round++;
-  if (round === 6) {
+  //round++;
+  if (round + 1 === 6) {
     //If so give option to retreat or stay
     console.log("You win, the aliens have been defeated");
     updateConsole("You win!! The aliens have been defeated!!");
@@ -457,6 +472,7 @@ const chooseShip = (shipNum) => {
 const moveOn = () => {
   let options = document.querySelector(".continueOn");
   options.style = "display:none";
+  round++;
 
   //Clear the console
   clearConsole();
