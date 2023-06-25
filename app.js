@@ -60,7 +60,7 @@ const resetShips = () => {
     {
       name: "The A team",
       hull: Math.floor(Math.random() * (6 - 4 + 1) + 4),
-      firepower: Math.floor(Math.random() * (5 - 2 + 1) + 2),
+      firepower: Math.floor(Math.random() * (5 - 3 + 1) + 3),
       accuracy: Math.floor(Math.random() * (8 - 6 + 1) + 6),
       image: "Aliens02.gif",
     },
@@ -76,7 +76,7 @@ const resetShips = () => {
       name: "The Dabber",
       hull: Math.floor(Math.random() * (9 - 6 + 1) + 6),
       firepower: Math.floor(Math.random() * (7 - 4 + 1) + 4),
-      accuracy: Math.floor(Math.random() * (9 - 6 + 1) + 6),
+      accuracy: Math.floor(Math.random() * (9 - 7 + 1) + 7),
       image:
         "https://ih1.redbubble.net/image.912469023.6065/st,small,507x507-pad,600x600,f8f8f8.u1.jpg",
     },
@@ -467,6 +467,8 @@ const chooseShip = (shipNum) => {
   document.querySelector(".Chooseship").style = "display:none";
   clearConsole();
 };
+
+const shootSound = () => {};
 
 //Function to continue
 const moveOn = () => {
