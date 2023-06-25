@@ -189,7 +189,7 @@ const setBoomPlayer = () => {
   item.setAttribute("src", "Boom2.gif");
 
   setTimeout(() => {
-    if (playerShip.hull >= 0) {
+    if (playerShip.hull > 0) {
       item.setAttribute("src", playerPics[shipSelection]);
     }
   }, 1000);
@@ -202,7 +202,7 @@ const setBoomAlien = () => {
   item.setAttribute("src", "Boom2.gif");
 
   setTimeout(() => {
-    if (aliens[round].hull >= 0) {
+    if (aliens[round].hull > 0) {
       item.setAttribute("src", aliens[round].image);
     }
   }, 1000);
@@ -257,6 +257,7 @@ const shootAlien = () => {
   //You attack alien, than determine if it is alive
   //If alive, alien attacks you and then determin if you survive
   console.log("Reading a shot");
+  shootSound();
   shootShip();
 
   setTimeout(() => {
@@ -309,6 +310,7 @@ const removeShoot = () => {
 //Alien takes there turn
 const alienTurn = () => {
   console.log(aliens[round].name, "readies a shot");
+  shootSound();
   shootPlayer();
 
   setTimeout(() => {
@@ -468,7 +470,11 @@ const chooseShip = (shipNum) => {
   clearConsole();
 };
 
-const shootSound = () => {};
+//Code taken from https://www.youtube.com/watch?v=3xlws5og44U&t=222s
+const shootSound = () => {
+  let laser = new Audio("lazer.mp3");
+  laser.play();
+};
 
 //Function to continue
 const moveOn = () => {
